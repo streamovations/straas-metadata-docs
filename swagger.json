@@ -92,13 +92,6 @@
             "required": false,
             "type": "string",
             "x-example": "Drets"
-          },
-          {
-            "name": "refid",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "x-example": "md01"
           }
         ],
         "responses": {
@@ -157,7 +150,9 @@
           "type": "string",
           "name": "customer",
           "in": "path",
-          "required": true
+          "required": true,
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -198,7 +193,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -226,7 +223,7 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getDelegates"
+        "operationId": "getDelegate"
       },
       "put": {
         "tags": [
@@ -298,7 +295,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
@@ -306,7 +305,8 @@
           "required": true,
           "type": "string",
           "description": "ObjectId for delegate",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -340,14 +340,17 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "name"
-              ],
               "properties": {
                 "name": {
                   "type": "string"
+                },
+                "": {
+                  "$ref": "#/definitions/delegates"
                 }
-              }
+              },
+              "required": [
+                "name"
+              ]
             }
           }
         ],
@@ -364,7 +367,9 @@
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -432,14 +437,17 @@
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -466,7 +474,9 @@
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -480,14 +490,6 @@
         ],
         "summary": "Get roles",
         "parameters": [
-          {
-            "name": "active",
-            "in": "query",
-            "required": false,
-            "type": "boolean",
-            "description": "Filter on active or inactive roles",
-            "x-example": true
-          },
           {
             "name": "last",
             "in": "query",
@@ -561,10 +563,6 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "function",
-                "name"
-              ],
               "properties": {
                 "name": {
                   "type": "string",
@@ -572,9 +570,13 @@
                 },
                 "priority": {
                   "type": "integer",
-                  "example": "0"
+                  "example": "0",
+                  "minimum": 0
                 }
-              }
+              },
+              "required": [
+                "name"
+              ]
             }
           }
         ],
@@ -604,7 +606,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -645,7 +649,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -701,7 +707,8 @@
                 },
                 "priority": {
                   "type": "integer",
-                  "example": "0"
+                  "example": "0",
+                  "minimum": 0
                 }
               }
             }
@@ -764,14 +771,17 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -890,17 +900,9 @@
             "required": true,
             "schema": {
               "type": "object",
-              "required": [
-                "id",
-                "mac",
-                "name",
-                "room",
-                "uuid"
-              ],
               "properties": {
                 "room": {
-                  "type": "integer",
-                  "example": 2
+                  "$ref": "#/definitions/room"
                 },
                 "name": {
                   "type": "string"
@@ -918,7 +920,13 @@
                   "type": "string"
                 },
                 "manufacturer": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "televic",
+                    "shure",
+                    "bosch",
+                    "sennheiser"
+                  ]
                 },
                 "active": {
                   "type": "boolean"
@@ -927,7 +935,14 @@
                   "type": "boolean",
                   "default": false
                 }
-              }
+              },
+              "required": [
+                "room",
+                "name",
+                "id",
+                "uuid",
+                "mac"
+              ]
             }
           }
         ],
@@ -957,7 +972,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -1011,7 +1028,7 @@
                   "type": "string"
                 },
                 "room": {
-                  "type": "integer"
+                  "$ref": "#/definitions/room"
                 },
                 "id": {
                   "type": "integer"
@@ -1023,7 +1040,13 @@
                   "type": "string"
                 },
                 "manufacturer": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "televic",
+                    "shure",
+                    "bosch",
+                    "sennheiser"
+                  ]
                 },
                 "active": {
                   "type": "boolean"
@@ -1086,7 +1109,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
@@ -1094,7 +1119,8 @@
           "required": true,
           "type": "string",
           "description": "objectID",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -1206,7 +1232,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "room",
@@ -1214,7 +1242,8 @@
           "required": true,
           "type": "integer",
           "description": "Room unique id",
-          "x-example": 2
+          "x-example": 2,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -1228,13 +1257,6 @@
         ],
         "summary": "Get attendees",
         "parameters": [
-          {
-            "name": "active",
-            "in": "query",
-            "required": false,
-            "type": "boolean",
-            "x-example": true
-          },
           {
             "name": "last",
             "in": "query",
@@ -1279,12 +1301,6 @@
             "in": "query",
             "required": false,
             "type": "integer"
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "required": false,
-            "type": "boolean"
           }
         ],
         "responses": {
@@ -1338,6 +1354,14 @@
                   "$ref": "#/definitions/session"
                 }
               }
+            },
+            "x-examples": {
+              "example-1": {
+                "delegate": "5ce92d6a7fc5fa37c33eb885",
+                "role": "5ce92d6a7fc5fa37c33eb885",
+                "microphone": "5ce92d6a7fc5fa37c33eb885",
+                "session": 100
+              }
             }
           }
         ],
@@ -1367,7 +1391,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -1418,18 +1444,13 @@
               "type": "object",
               "properties": {
                 "delegate": {
-                  "type": "string",
-                  "example": "jh01"
+                  "$ref": "#/definitions/ID"
                 },
                 "role": {
-                  "type": "string",
-                  "example": "waarnemend voorzitter"
+                  "$ref": "#/definitions/ID"
                 },
                 "microphone": {
                   "$ref": "#/definitions/ID"
-                },
-                "sharedMicrophone": {
-                  "type": "boolean"
                 }
               }
             }
@@ -1477,7 +1498,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
@@ -1485,7 +1508,8 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -1584,7 +1608,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "session",
@@ -1592,7 +1618,8 @@
           "required": true,
           "type": "integer",
           "description": "Session unique id",
-          "x-example": 100
+          "x-example": 100,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -1696,7 +1723,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -1765,7 +1794,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
@@ -1773,7 +1804,8 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -1843,7 +1875,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "session",
@@ -1851,7 +1885,8 @@
           "required": true,
           "type": "integer",
           "description": "Session unique id",
-          "x-example": 100
+          "x-example": 100,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -1955,7 +1990,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "session",
@@ -1963,7 +2000,8 @@
           "required": true,
           "type": "integer",
           "description": "Session unique id",
-          "x-example": 100
+          "x-example": 100,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -2023,7 +2061,7 @@
                   }
                 },
                 "session": {
-                  "type": "integer"
+                  "$ref": "#/definitions/session"
                 }
               },
               "required": [
@@ -2059,7 +2097,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         }
       ],
       "x-restlet": {
@@ -2090,7 +2130,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getTopic"
+        "operationId": "getTopic",
+        "description": ""
       },
       "put": {
         "tags": [
@@ -2202,7 +2243,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
@@ -2210,7 +2253,8 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885"
+          "x-example": "5ce92d6a7fc5fa37c33eb885",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -2313,7 +2357,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "session",
@@ -2321,7 +2367,8 @@
           "required": true,
           "type": "integer",
           "description": "Session unique id",
-          "x-example": 100
+          "x-example": 100,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -2362,13 +2409,16 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -2409,13 +2459,16 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -2441,13 +2494,16 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "pattern": "/^[0-9a-fA-F]{24}$/"
         }
       ],
       "x-restlet": {
@@ -2455,30 +2511,6 @@
       }
     },
     "/{customer}/metadata/metadata/session/{session}": {
-      "delete": {
-        "tags": [
-          "Metadata"
-        ],
-        "summary": "Delete metadata",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Status 200"
-          },
-          "400": {
-            "description": "Status 400"
-          },
-          "401": {
-            "description": "Status 401"
-          },
-          "403": {
-            "description": "Status 403"
-          },
-          "500": {
-            "description": "Status 500"
-          }
-        }
-      },
       "parameters": [
         {
           "name": "customer",
@@ -2486,7 +2518,9 @@
           "required": true,
           "type": "string",
           "description": "Customer unique name",
-          "x-example": "veurne"
+          "x-example": "veurne",
+          "minLength": 3,
+          "maxLength": 255
         },
         {
           "name": "session",
@@ -2494,7 +2528,8 @@
           "required": true,
           "type": "integer",
           "description": "Session unique id",
-          "x-example": 100
+          "x-example": 100,
+          "minimum": 1
         }
       ],
       "x-restlet": {
@@ -2502,30 +2537,6 @@
       }
     },
     "/{customer}/metadata/metadata/session/{session}/type/{type}": {
-      "delete": {
-        "tags": [
-          "Metadata"
-        ],
-        "summary": "Delete metadata",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Status 200"
-          },
-          "400": {
-            "description": "Status 400"
-          },
-          "401": {
-            "description": "Status 401"
-          },
-          "403": {
-            "description": "Status 403"
-          },
-          "500": {
-            "description": "Status 500"
-          }
-        }
-      },
       "parameters": [
         {
           "name": "customer",
@@ -2601,14 +2612,17 @@
       },
       "x-tags": [
         "customer"
-      ]
+      ],
+      "minLength": 3,
+      "maxLength": 255
     },
     "ID": {
       "type": "string",
       "example": "5ce92d6a7fc5fa37c33eb885",
       "x-restlet": {
         "section": "Data Types"
-      }
+      },
+      "pattern": "/^[0-9a-fA-F]{24}$/"
     },
     "room": {
       "type": "integer",
@@ -2624,22 +2638,12 @@
         "section": "Data Types"
       }
     },
-    "type": {
-      "type": "string",
-      "example": "documentLinks",
-      "x-restlet": {
-        "section": "Data Types"
-      }
-    },
     "delegates": {
       "type": "object",
-      "required": [
-        "division",
-        "firstname",
-        "lastname",
-        "refId",
-        "role"
-      ],
+      "example": "{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
+      "x-restlet": {
+        "section": "Data Types"
+      },
       "properties": {
         "firstname": {
           "type": "string",
@@ -2652,22 +2656,26 @@
           "example": "Vanhoucke"
         },
         "email": {
-          "type": "string"
+          "type": "string",
+          "format": "email"
         },
         "refId": {
           "type": "string"
         },
         "division": {
-          "type": "string"
+          "$ref": "#/definitions/ID"
         },
         "role": {
-          "type": "string"
+          "$ref": "#/definitions/ID"
         }
       },
-      "example": "{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
-      "x-restlet": {
-        "section": "Data Types"
-      }
+      "required": [
+        "firstname",
+        "lastname",
+        "refId",
+        "division",
+        "role"
+      ]
     },
     "delegatesOptional": {
       "type": "object",
