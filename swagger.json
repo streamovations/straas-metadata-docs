@@ -96,7 +96,15 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2717,5 +2725,24 @@
   "schemes": [
     "https"
   ],
-  "servers": [{ "url": "core-api.streamovations.be", "description": ""}]
+  "servers": [
+    {
+      "url": "core-api.streamovations.be",
+      "description": "demo"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "JWT Token": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "query"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT Bearer": []
+    }
+  ]
 }
