@@ -158,7 +158,16 @@
           }
         },
         "operationId": "createDelegate",
-        "description": "Create a Delegate"
+        "description": "Create a Delegate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": ""
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -339,7 +348,17 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DivisionResponse"
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "getDivisions",
@@ -374,7 +393,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createDivision",
@@ -404,7 +430,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDivision",
@@ -433,7 +466,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createOrUpdateDivision",
@@ -447,7 +487,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteDivision",
@@ -555,7 +602,28 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListRolesResponse"
+                  }
+                },
+                "examples": {
+                  "ListRolesResponse": {
+                    "value": [
+                      {
+                        "priority": 1,
+                        "name": "string",
+                        "_id": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2731,6 +2799,170 @@
         "name": "API Key",
         "type": "http",
         "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Session": {
+        "type": "integer",
+        "title": "Session",
+        "example": 100,
+        "minimum": 1,
+        "x-examples": {
+          "example-1": 100
+        }
+      },
+      "Room": {
+        "type": "integer",
+        "title": "Room",
+        "x-examples": {
+          "example-1": 0
+        },
+        "example": 1,
+        "minimum": 1
+      },
+      "RoleResponse": {
+        "title": "ListRolesResponse",
+        "type": "object",
+        "description": "Reponse for Topic CRUD Operations",
+        "x-examples": {
+          "example-1": {
+            "_id": "5d5aadd539d02e4c4bc3fb5c",
+            "priority": 1,
+            "name": "Test Name"
+          }
+        },
+        "properties": {
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          }
+        }
+      },
+      "Priority": {
+        "type": "integer",
+        "title": "Priority",
+        "description": "",
+        "example": 1,
+        "x-examples": {
+          "example-1": 1
+        }
+      },
+      "Name": {
+        "title": "Name",
+        "type": "string",
+        "x-examples": {
+          "Test Name": "string"
+        }
+      },
+      "_id": {
+        "title": "_id",
+        "type": "string",
+        "x-examples": {
+          "5d5aadd539d02e4c4bc3fb5c": "string"
+        }
+      },
+      "DelegateResponse": {
+        "title": "ListDelegatesResponse",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          }
+        }
+      },
+      "DelegateFirstName": {
+        "title": "DelegateFirstName",
+        "type": "string",
+        "x-examples": {
+          "example-1": "string"
+        }
+      },
+      "DelegateLastName": {
+        "title": "DelegateLastName",
+        "type": "string"
+      },
+      "DelegateEmail": {
+        "type": "string",
+        "title": "DelegateEmail",
+        "format": "email"
+      },
+      "DivisionResponse": {
+        "title": "DivisionResponse",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          },
+          "photo": {
+            "$ref": "#/components/schemas/PhotoResponse"
+          },
+          "name": {
+            "$ref": "#/components/schemas/DivisionName"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "_id": "string",
+            "photo": {
+              "_id": "string",
+              "url": "http://example.com",
+              "size": 0,
+              "mimeType": "string",
+              "encoding": "string"
+            },
+            "name": "string"
+          }
+        }
+      },
+      "PhotoResponse": {
+        "title": "PhotoResponse",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "encoding": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "url",
+          "size",
+          "mimeType",
+          "encoding"
+        ],
+        "x-examples": {
+          "example-1": {
+            "_id": "5d5aad6c39d02e4c4bc3fb48",
+            "url": "http://example.com",
+            "size": 2715,
+            "mimeType": "image/png",
+            "encoding": "7bit"
+          }
+        }
+      },
+      "DivisionName": {
+        "title": "DivisionName",
+        "type": "string",
+        "x-examples": {
+          "example-1": "string"
+        }
       }
     }
   },
