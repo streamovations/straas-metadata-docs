@@ -2509,37 +2509,6 @@
       "x-restlet": {
         "section": "Topics"
       }
-    },
-    "/{customer}/metadata/metadata/session/{session}/type/{type}": {
-      "parameters": [
-        {
-          "name": "customer",
-          "in": "path",
-          "required": true,
-          "type": "string",
-          "description": "Customer unique name",
-          "x-example": "veurne"
-        },
-        {
-          "name": "session",
-          "in": "path",
-          "required": true,
-          "type": "integer",
-          "description": "Session unique id",
-          "x-example": 100
-        },
-        {
-          "name": "type",
-          "in": "path",
-          "required": true,
-          "type": "string",
-          "description": "Metadata unique type",
-          "x-example": "documentLinks"
-        }
-      ],
-      "x-restlet": {
-        "section": "Other Metadata"
-      }
     }
   },
   "securityDefinitions": {
