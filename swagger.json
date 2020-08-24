@@ -1,0 +1,3652 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "0.0.9",
+    "title": "Streamovations Metadata API - Alpha",
+    "termsOfService": "",
+    "contact": {
+      "name": "support",
+      "url": "https://streamovations.be",
+      "email": "operations@streamovations.be"
+    },
+    "license": {
+      "name": "GPL-3.0",
+      "url": "https://opensource.org/licenses/GPL-3.0"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "security": [
+    {
+      "Custom": []
+    }
+  ],
+  "paths": {
+    "/{customer}/metadata/delegates": {
+      "get": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Get delegates",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Filter for active or inactive delegates",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Paginate filter starting from given delegate id in combination with limit"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Paginate filter for given limit started from last given delegate id",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "createdAt",
+              "updatedAt"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "firstname",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "Michel"
+          },
+          {
+            "name": "lastname",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "Drets"
+          },
+          {
+            "name": "refid",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "md01"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Create a delegate",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/delegates"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Delegates"
+      }
+    },
+    "/{customer}/metadata/delegates/export": {
+      "get": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Export delegates",
+        "description": "Exports delegates for download as metadata-delegates.json",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Delegates"
+      }
+    },
+    "/{customer}/metadata/delegates/{id}": {
+      "get": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Get a delegate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Update a delegate",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/delegatesOptional"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Delete a delegate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "ObjectId for delegate",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Delegates"
+      }
+    },
+    "/{customer}/metadata/delegates/refid": {
+      "post": {
+        "tags": [
+          "Delegates"
+        ],
+        "summary": "Create a delegate",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/delegates"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Delegates"
+      }
+    },
+    "/{customer}/metadata/divisions": {
+      "get": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Get divisions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Create a division",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Divisions"
+      }
+    },
+    "/{customer}/metadata/divisions/{id}": {
+      "get": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Get a division",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Update a division",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Delete a division",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Divisions"
+      }
+    },
+    "/{customer}/metadata/divisions/export": {
+      "get": {
+        "tags": [
+          "Divisions"
+        ],
+        "summary": "Export divisions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Divisions"
+      }
+    },
+    "/{customer}/metadata/roles": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Get roles",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Filter on active or inactive roles",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "function",
+              "name"
+            ],
+            "x-example": "createdAt"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Create a role",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "function",
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Mayor of Veurne"
+                },
+                "priority": {
+                  "type": "integer",
+                  "example": "0"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Roles"
+      }
+    },
+    "/{customer}/metadata/roles/export": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Export Roles",
+        "description": "Exports roles for download as metadata-roles.json",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Roles"
+      }
+    },
+    "/{customer}/metadata/roles/{id}": {
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Get a role",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "204": {
+            "description": "Status 204"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Update a role",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Mayor of Veurne"
+                },
+                "priority": {
+                  "type": "integer",
+                  "example": "0"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "304": {
+            "description": "Status 304"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Roles"
+        ],
+        "summary": "Delete a role",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "304": {
+            "description": "Status 304"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Roles"
+      }
+    },
+    "/{customer}/metadata/microphones": {
+      "get": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Get Microphones",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ],
+            "x-example": "true"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-example": 100
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "5ce92d6a7fc5fa37c33eb885"
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "desc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "status",
+              "createdAt",
+              "updatedAt",
+              "mac",
+              "id",
+              "uuid",
+              "room"
+            ],
+            "x-example": "status"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "2"
+          },
+          {
+            "name": "refid",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "2-1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Create microphone",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "id",
+                "mac",
+                "name",
+                "room",
+                "uuid"
+              ],
+              "properties": {
+                "room": {
+                  "type": "integer",
+                  "example": 2
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "mac": {
+                  "type": "string"
+                },
+                "manufacturer": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "status": {
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Microphones"
+      }
+    },
+    "/{customer}/metadata/microphones/{id}": {
+      "get": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Get microphone",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Update microphone",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "room": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "mac": {
+                  "type": "string"
+                },
+                "manufacturer": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "status": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Delete Microphone",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "objectID",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Microphones"
+      }
+    },
+    "/{customer}/metadata/microphones/room/{room}": {
+      "get": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Get microphones in a room",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "false",
+              "true"
+            ],
+            "x-example": "true"
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "5ce92d6a7fc5fa37c33eb885"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "desc"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "microphone id",
+            "x-example": "2"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "status",
+              "createdAt",
+              "updatedAt",
+              "id",
+              "uuid",
+              "room",
+              "mac"
+            ],
+            "x-example": "status"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "refid",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "2-1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "room",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Room unique id",
+          "x-example": 2
+        }
+      ],
+      "x-restlet": {
+        "section": "Microphones"
+      }
+    },
+    "/{customer}/metadata/microphones/swap": {
+      "put": {
+        "tags": [
+          "Microphones"
+        ],
+        "summary": "Swap microphone fields",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "field",
+                "from"
+              ],
+              "properties": {
+                "from": {
+                  "$ref": "#/definitions/ID"
+                },
+                "to": {
+                  "$ref": "#/definitions/ID"
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "status",
+                    "uuid",
+                    "mac",
+                    "room",
+                    "manufacturer"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Microphones"
+      }
+    },
+    "/{customer}/metadata/attendees": {
+      "get": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Get attendees",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "_id"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "microphone",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Create attendees",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "delegate",
+                "microphone",
+                "session"
+              ],
+              "properties": {
+                "delegate": {
+                  "$ref": "#/definitions/ID"
+                },
+                "role": {
+                  "$ref": "#/definitions/ID"
+                },
+                "microphone": {
+                  "$ref": "#/definitions/ID"
+                },
+                "session": {
+                  "$ref": "#/definitions/session"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/attendees/{id}": {
+      "get": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Get an attendee",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "204": {
+            "description": "Status 204"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Update an attendee",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "delegate": {
+                  "type": "string",
+                  "example": "jh01"
+                },
+                "role": {
+                  "type": "string",
+                  "example": "waarnemend voorzitter"
+                },
+                "microphone": {
+                  "$ref": "#/definitions/ID"
+                },
+                "sharedMicrophone": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Delete an attendee",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "304": {
+            "description": "Status 304"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "objectId",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/attendees/refid": {
+      "post": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Create attendees by refId",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "delegate",
+                "microphone",
+                "session"
+              ],
+              "properties": {
+                "delegate": {
+                  "type": "string",
+                  "description": "md01",
+                  "example": "md01"
+                },
+                "role": {
+                  "type": "string",
+                  "description": "directie",
+                  "example": "burgemeester"
+                },
+                "microphone": {
+                  "type": "string",
+                  "description": "1",
+                  "example": "2-1"
+                },
+                "session": {
+                  "$ref": "#/definitions/session"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/attendees/refid/{id}": {
+      "put": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Update an attendee",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "delegate": {
+                  "type": "string",
+                  "example": "md01"
+                },
+                "role": {
+                  "type": "string",
+                  "example": "burgemeester"
+                },
+                "microphone": {
+                  "$ref": "#/definitions/ID"
+                },
+                "sharedMicrophone": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/attendees/session/{session}": {
+      "get": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Get attendees by session",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "_id"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "microphone",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/attendees/swap": {
+      "put": {
+        "tags": [
+          "Attendees"
+        ],
+        "summary": "Swap attendee fields",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "field",
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "$ref": "#/definitions/ID"
+                },
+                "to": {
+                  "$ref": "#/definitions/ID"
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "roles",
+                    "delegate",
+                    "microphone",
+                    "seat",
+                    "session"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Attendees"
+      }
+    },
+    "/{customer}/metadata/speeches": {
+      "get": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Get speeches",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "5cf909247805517211b124e7"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "start.realTime",
+              "stop.realTime",
+              "microphone.id"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "microphone",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-example": 5
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Speeches"
+      }
+    },
+    "/{customer}/metadata/speeches/{id}": {
+      "get": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Get a speech",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        },
+        "description": ""
+      },
+      "delete": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Delete a speech",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "304": {
+            "description": "Status 304"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "objectId",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Speeches"
+      }
+    },
+    "/{customer}/metadata/speeches/session/{session}/status": {
+      "post": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Update speech status",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "microphone",
+                "room",
+                "status",
+                "timestamp"
+              ],
+              "properties": {
+                "microphone": {
+                  "type": "number",
+                  "example": 7
+                },
+                "status": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "timestamp": {
+                  "type": "number",
+                  "example": 1559213701
+                },
+                "room": {
+                  "$ref": "#/definitions/room"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Request"
+          },
+          "400": {
+            "description": "Validation Error"
+          },
+          "401": {
+            "description": "Unauthorized Request"
+          },
+          "500": {
+            "description": "Internal Server error"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        }
+      ],
+      "x-restlet": {
+        "section": "Speeches"
+      }
+    },
+    "/{customer}/metadata/speeches/session/{session}": {
+      "get": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Get speeches by session",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "5cf909247805517211b124e7"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "start.realTime",
+              "stop.realTime",
+              "microphone.id"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "microphone",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-example": 5
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        }
+      ],
+      "x-restlet": {
+        "section": "Speeches"
+      }
+    },
+    "/{customer}/metadata/speeches/swap": {
+      "put": {
+        "tags": [
+          "Speeches"
+        ],
+        "summary": "Swap speech fields",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "field",
+                "from"
+              ],
+              "properties": {
+                "from": {
+                  "$ref": "#/definitions/ID"
+                },
+                "to": {
+                  "$ref": "#/definitions/ID"
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "uuid",
+                    "attendee",
+                    "attendee.delegate",
+                    "attendee.roles",
+                    "attendee.seat",
+                    "session",
+                    "start",
+                    "stop",
+                    "status"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Speeches"
+      }
+    },
+    "/{customer}/metadata/topics": {
+      "post": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Create a topic",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Topic Name 3"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "Description for Topic Name 3"
+                },
+                "active": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "start": {
+                  "type": "object",
+                  "properties": {
+                    "realTime": {
+                      "type": "integer",
+                      "example": 1560115860000
+                    }
+                  },
+                  "required": [
+                    "realTime"
+                  ]
+                },
+                "stop": {
+                  "type": "object",
+                  "properties": {
+                    "realTime": {
+                      "type": "integer",
+                      "example": 1560116160000
+                    },
+                    "relativeTime": {
+                      "type": "integer",
+                      "example": 30
+                    }
+                  }
+                },
+                "session": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "session"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/{id}": {
+      "get": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Get a topic",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Update a topic",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Topic Name 1"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description for Topic Name 1"
+                },
+                "active": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "start": {
+                  "required": [
+                    "realTime"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "realTime": {
+                      "type": "integer",
+                      "example": 1560115860000
+                    }
+                  }
+                },
+                "stop": {
+                  "required": [
+                    "realTime",
+                    "relativeTime"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "realTime": {
+                      "type": "integer",
+                      "example": 1560116160000
+                    },
+                    "relativeTime": {
+                      "type": "string",
+                      "example": "30"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Delete a topic",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "objectId",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/session/{session}": {
+      "get": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Get topics by session",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "x-example": "5cfaa2571695e82e0d5c590b"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "createdAt",
+              "updatedAt",
+              "name",
+              "stop.realTime",
+              "start.realTime"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "session",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "x-example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/swap": {
+      "put": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Swap topic fields",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "field",
+                "from",
+                "to"
+              ],
+              "properties": {
+                "from": {
+                  "$ref": "#/definitions/ID"
+                },
+                "to": {
+                  "$ref": "#/definitions/ID"
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "name",
+                    "description",
+                    "session",
+                    "start",
+                    "stop"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/{id}/stop": {
+      "post": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Stop a Topic",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stop": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/{id}/start": {
+      "post": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Start a topic",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/topics/{id}/reset": {
+      "post": {
+        "tags": [
+          "Topics"
+        ],
+        "summary": "Reset a topic",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "x-restlet": {
+        "section": "Topics"
+      }
+    },
+    "/{customer}/metadata/metadata": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Get metadata",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Filter for active or inactive delegates",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Paginate filter starting from given delegate id in combination with limit"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Paginate filter for given limit started from last given delegate id",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "createdAt",
+              "updatedAt"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "session",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create metadata",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "data",
+                "session",
+                "type"
+              ],
+              "properties": {
+                "session": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                },
+                "active": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Status 201"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Other Metadata"
+      }
+    },
+    "/{customer}/metadata/metadata/{id}": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Get metadata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Update metadata",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "session": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object"
+                },
+                "active": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Delete metadata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "objectId",
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
+        }
+      ],
+      "x-restlet": {
+        "section": "Other Metadata"
+      }
+    },
+    "/{customer}/metadata/metadata/session/{session}": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Get metadata",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Filter for active or inactive delegates",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Paginate filter starting from given delegate id in combination with limit"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Paginate filter for given limit started from last given delegate id",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "createdAt",
+              "updatedAt"
+            ],
+            "x-example": "createdAt"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Delete metadata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        }
+      ],
+      "x-restlet": {
+        "section": "Other Metadata"
+      }
+    },
+    "/{customer}/metadata/metadata/session/{session}/type/{type}": {
+      "get": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Get metadata",
+        "parameters": [
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "description": "Filter for active or inactive delegates",
+            "x-example": true
+          },
+          {
+            "name": "last",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Paginate filter starting from given delegate id in combination with limit"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "Paginate filter for given limit started from last given delegate id",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100,
+            "x-example": 100
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "x-example": "asc"
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Sort ascending or descending based on given sortField",
+            "enum": [
+              "createdAt",
+              "updatedAt"
+            ],
+            "x-example": "createdAt"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Delete metadata",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        },
+        {
+          "name": "session",
+          "in": "path",
+          "required": true,
+          "type": "integer",
+          "description": "Session unique id",
+          "x-example": 100
+        },
+        {
+          "name": "type",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Metadata unique type",
+          "x-example": "documentLinks"
+        }
+      ],
+      "x-restlet": {
+        "section": "Other Metadata"
+      }
+    },
+    "/{customer}/metadata/metadata/swap": {
+      "put": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Swap metadata fields",
+        "consumes": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "field",
+                "from"
+              ],
+              "properties": {
+                "from": {
+                  "$ref": "#/definitions/ID"
+                },
+                "to": {
+                  "$ref": "#/definitions/ID"
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "session",
+                    "type",
+                    "data"
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "400": {
+            "description": "Status 400"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "403": {
+            "description": "Status 403"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "path",
+          "required": true,
+          "type": "string",
+          "description": "Customer unique name",
+          "x-example": "veurne"
+        }
+      ],
+      "x-restlet": {
+        "section": "Other Metadata"
+      }
+    },
+    "/system/status": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Get system status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200"
+          },
+          "401": {
+            "description": "Status 401"
+          },
+          "500": {
+            "description": "Status 500"
+          }
+        }
+      },
+      "x-restlet": {
+        "section": "System"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Custom": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "customer": {
+      "type": "string",
+      "example": "veurne",
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "ID": {
+      "type": "string",
+      "example": "5ce92d6a7fc5fa37c33eb885",
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "room": {
+      "type": "integer",
+      "example": 2,
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "session": {
+      "type": "integer",
+      "example": 100,
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "type": {
+      "type": "string",
+      "example": "documentLinks",
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "delegates": {
+      "type": "object",
+      "required": [
+        "division",
+        "firstname",
+        "lastname",
+        "refId",
+        "role"
+      ],
+      "properties": {
+        "firstname": {
+          "type": "string",
+          "description": "First name of delegate",
+          "example": "John"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Last name of delegate",
+          "example": "Vanhoucke"
+        },
+        "email": {
+          "type": "string"
+        },
+        "refId": {
+          "type": "string"
+        },
+        "division": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "example": "{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    },
+    "delegatesOptional": {
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "type": "string",
+          "description": "First name of delegate"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Last name of delegate"
+        },
+        "email": {
+          "type": "string"
+        },
+        "refId": {
+          "type": "string"
+        },
+        "division": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "example": "\n{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
+      "x-restlet": {
+        "section": "Data Types"
+      }
+    }
+  },
+  "x-restlet": {
+    "sections": {
+      "Delegates": {
+        "description": "Only one delegate can be bound to one attendee per session, an attendee can only have one delegate per session"
+      },
+      "Divisions": {
+        "description": "A division can be bound to multiple delegates\n\nMultiple divisions can be bound to one delegate"
+      },
+      "Roles": {
+        "description": "A role can be bound to multiple attendees\n\nMultiple roles can be bound to one attendee per session"
+      },
+      "Microphones": {
+        "description": "Microphones are unique per customer based on an id, uuid and mac address and are bound to one room id. \n\nMicrophones cannot have the same id, uuid or mac address and cannot be bound to multiple rooms per microphone.\n\nA microphone can only be bound to one attendee per session, unless sharedMicrophone option is given when creating an attendee for a session"
+      },
+      "Attendees": {
+        "description": "One attendee is bound to one session id\n\nOne attendee is bound to one delegate\n\nOne attendee is bound to one microphone, unless sharedMicrophone option is set when creating an attendee to share a microphone with multiple attendees\n\nOne attendee is bound to one seat\n\nOne attendee can be bound to one or more roles, multiple attendees can have the same roles\n\n"
+      },
+      "Speeches": {
+        "description": "One Speech is bound to one session id\n\nOne Speech is bound to one Attendee\n\n"
+      },
+      "Topics": {
+        "description": "One topic is bound to one session id"
+      },
+      "Other Metadata": {
+        "description": "All other metadata that does not belong to custom created metadata section like\n\n* delegates\n* roles\n* attendees\n* microphones\n\nOther metadata data routes can be used to create metadata types dynamically"
+      },
+      "System": {},
+      "Data Types": {}
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "core-api.streamovations.be"
+}
