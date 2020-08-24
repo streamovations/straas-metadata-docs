@@ -531,7 +531,43 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DivisionResponse"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "string",
+                        "photo": {
+                          "_id": "string",
+                          "url": "http://example.com",
+                          "size": 0,
+                          "mimeType": "string",
+                          "encoding": "string"
+                        },
+                        "name": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-disposition": {
+                "schema": {
+                  "type": "string",
+                  "example": "attachment; filename=metadata-divisions.json"
+                },
+                "required": true
+              }
+            }
           }
         },
         "operationId": "exportDivisions",
@@ -608,7 +644,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ListRolesResponse"
+                    "$ref": "#/components/schemas/RoleResponse"
                   }
                 },
                 "examples": {
@@ -673,7 +709,14 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 201"
+            "description": "Status 201",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -717,7 +760,25 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RoleResponse"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Content-disposition": {
+                "schema": {
+                  "type": "string",
+                  "example": "attachment; filename=metadata-roles.json"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -759,7 +820,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResponse"
+                }
+              }
+            }
           },
           "204": {
             "description": "Status 204"
@@ -809,7 +877,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResponse"
+                }
+              }
+            }
           },
           "304": {
             "description": "Status 304"
@@ -838,7 +913,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleResponse"
+                }
+              }
+            }
           },
           "304": {
             "description": "Status 304"
@@ -2836,7 +2918,7 @@
             "$ref": "#/components/schemas/Priority"
           },
           "name": {
-            "$ref": "#/components/schemas/Name"
+            "$ref": "#/components/schemas/RoleName"
           },
           "_id": {
             "$ref": "#/components/schemas/_id"
@@ -2850,13 +2932,6 @@
         "example": 1,
         "x-examples": {
           "example-1": 1
-        }
-      },
-      "Name": {
-        "title": "Name",
-        "type": "string",
-        "x-examples": {
-          "Test Name": "string"
         }
       },
       "_id": {
@@ -2959,6 +3034,13 @@
       },
       "DivisionName": {
         "title": "DivisionName",
+        "type": "string",
+        "x-examples": {
+          "example-1": "string"
+        }
+      },
+      "RoleName": {
+        "title": "RoleName",
         "type": "string",
         "x-examples": {
           "example-1": "string"
