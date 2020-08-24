@@ -201,7 +201,18 @@
           }
         },
         "operationId": "createDelegate",
-        "description": "Create a Delegate"
+        "description": "Create a Delegate",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -3266,6 +3277,25 @@
             "$ref": "#/components/schemas/MicrophoneManufacturer"
           }
         }
+      },
+      "DelegateCreateRequest": {
+        "title": "DelegateCreateRequest",
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "$ref": "#/components/schemas/DelegateFirstName"
+          },
+          "lastname": {
+            "$ref": "#/components/schemas/DelegateLastName"
+          },
+          "email": {
+            "$ref": "#/components/schemas/DelegateEmail"
+          }
+        },
+        "required": [
+          "firstname",
+          "email"
+        ]
       }
     }
   },
