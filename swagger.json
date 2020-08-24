@@ -3004,11 +3004,10 @@
         }
       },
       "_id": {
-        "title": "_id",
         "type": "string",
-        "x-examples": {
-          "5d5aadd539d02e4c4bc3fb5c": "string"
-        }
+        "title": "_id",
+        "x-examples": {},
+        "example": "5d5aad6c39d02e4c4bc3fb45"
       },
       "DelegateResponse": {
         "title": "DelegatesResponse",
@@ -3037,6 +3036,38 @@
           },
           "email": {
             "$ref": "#/components/schemas/DelegateEmail"
+          }
+        },
+        "x-examples": {
+          "example-2": {
+            "_id": "5d5aad5e39d02e4c4bc3fb40",
+            "firstname": "John",
+            "lastname": "Doe",
+            "description": null,
+            "photo": {
+              "encoding": "7bit",
+              "mimeType": "image/jpeg",
+              "size": 5963,
+              "url": "https://metadata-cdn.streamovations.be/677cca3759f7fefb7d9e446a96a3144e",
+              "_id": "5d5aad5f39d02e4c4bc3fb43"
+            },
+            "division": {
+              "_id": "5ed65f97ad10e2185ffd4897",
+              "photo": {
+                "_id": "5d5aad7f39d02e4c4bc3fb4d",
+                "url": "https://metadata-cdn.streamovations.be/636cc866ab827a6947072c2f015ff495",
+                "mimeType": "image/png",
+                "encoding": "7bit",
+                "size": 3865
+              },
+              "name": "NV-A"
+            },
+            "role": {
+              "priority": 1,
+              "name": "Burgemeester",
+              "_id": "5d8b13b233a3754d07d9316d"
+            },
+            "email": "user@example.com"
           }
         }
       },
@@ -3072,46 +3103,21 @@
         },
         "x-examples": {
           "example-1": {
-            "_id": "string",
+            "_id": "5d5aad5e39d02e4c4bc3fb40",
             "photo": {
-              "_id": "string",
-              "url": "http://example.com",
-              "size": 0,
-              "mimeType": "string",
-              "encoding": "string"
+              "_id": "5d5aad6c39d02e4c4bc3fb48",
+              "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+              "size": 2751,
+              "mimeType": "image/png",
+              "encoding": "7bit"
             },
-            "name": "string"
+            "name": "NV-A"
           }
         }
       },
       "PhotoResponse": {
         "title": "PhotoResponse",
         "type": "object",
-        "properties": {
-          "_id": {
-            "$ref": "#/components/schemas/_id"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "size": {
-            "type": "integer"
-          },
-          "mimeType": {
-            "type": "string"
-          },
-          "encoding": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "_id",
-          "url",
-          "size",
-          "mimeType",
-          "encoding"
-        ],
         "x-examples": {
           "example-1": {
             "_id": "5d5aad6c39d02e4c4bc3fb48",
@@ -3120,7 +3126,36 @@
             "mimeType": "image/png",
             "encoding": "7bit"
           }
-        }
+        },
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2"
+          },
+          "size": {
+            "type": "integer",
+            "example": 2751
+          },
+          "mimeType": {
+            "type": "string",
+            "example": "image/png"
+          },
+          "encoding": {
+            "type": "string",
+            "example": "7bit"
+          }
+        },
+        "required": [
+          "_id",
+          "url",
+          "size",
+          "mimeType",
+          "encoding"
+        ]
       },
       "DivisionName": {
         "title": "DivisionName",
