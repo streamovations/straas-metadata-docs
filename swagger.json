@@ -94,8 +94,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {}
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DelegateResponse"
+                  }
                 }
               }
             }
@@ -145,7 +147,14 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 201"
+            "description": "Status 201",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegateResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -158,16 +167,7 @@
           }
         },
         "operationId": "createDelegate",
-        "description": "Create a Delegate",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": ""
-              }
-            }
-          }
-        }
+        "description": "Create a Delegate"
       },
       "parameters": [
         {
@@ -235,7 +235,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegateResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -271,7 +278,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegateResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -297,7 +311,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegateResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1046,7 +1067,17 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MicrophoneResponse"
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1125,7 +1156,14 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 201"
+            "description": "Status 201",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicrophoneResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1168,7 +1206,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicrophoneResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1239,7 +1284,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicrophoneResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1265,7 +1317,14 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicrophoneResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1388,7 +1447,17 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MicrophoneResponse"
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2903,9 +2972,9 @@
         "minimum": 1
       },
       "RoleResponse": {
-        "title": "ListRolesResponse",
+        "title": "RolesResponse",
         "type": "object",
-        "description": "Reponse for Topic CRUD Operations",
+        "description": "",
         "x-examples": {
           "example-1": {
             "_id": "5d5aadd539d02e4c4bc3fb5c",
@@ -2942,11 +3011,32 @@
         }
       },
       "DelegateResponse": {
-        "title": "ListDelegatesResponse",
+        "title": "DelegatesResponse",
         "type": "object",
         "properties": {
           "_id": {
             "$ref": "#/components/schemas/_id"
+          },
+          "firstname": {
+            "$ref": "#/components/schemas/DelegateFirstName"
+          },
+          "lastname": {
+            "$ref": "#/components/schemas/DelegateLastName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
+          },
+          "photo": {
+            "$ref": "#/components/schemas/PhotoResponse"
+          },
+          "division": {
+            "$ref": "#/components/schemas/DivisionResponse"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleResponse"
+          },
+          "email": {
+            "$ref": "#/components/schemas/DelegateEmail"
           }
         }
       },
@@ -3044,6 +3134,68 @@
         "type": "string",
         "x-examples": {
           "example-1": "string"
+        }
+      },
+      "MicrophoneManufacturer": {
+        "type": "string",
+        "title": "MicrophoneManufacturer",
+        "enum": [
+          "televic",
+          "bosch",
+          "shure",
+          "sennheiser"
+        ]
+      },
+      "MicrophoneName": {
+        "title": "MicrophoneName",
+        "type": "string"
+      },
+      "MicrophoneUUID": {
+        "title": "MicrophoneUUID",
+        "type": "string"
+      },
+      "MicrophoneID": {
+        "type": "integer",
+        "title": "MicrophoneID",
+        "minimum": 1
+      },
+      "MicrophoneStatus": {
+        "title": "MicrophoneStatus",
+        "type": "boolean",
+        "x-examples": {}
+      },
+      "Description": {
+        "title": "Description",
+        "type": "string"
+      },
+      "MicrophoneResponse": {
+        "title": "MicrophoneResponse",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MicrophoneName"
+          },
+          "uuid": {
+            "$ref": "#/components/schemas/MicrophoneUUID"
+          },
+          "id": {
+            "$ref": "#/components/schemas/MicrophoneID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MicrophoneStatus"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
+          },
+          "room": {
+            "$ref": "#/components/schemas/Room"
+          },
+          "manufacturer": {
+            "$ref": "#/components/schemas/MicrophoneManufacturer"
+          }
         }
       }
     }
