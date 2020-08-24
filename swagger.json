@@ -244,6 +244,9 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/delegatesOptional"
+            },
+            "x-examples": {
+              "example-1": "\n{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}"
             }
           }
         ],
