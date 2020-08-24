@@ -127,6 +127,17 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/delegates"
+            },
+            "x-examples": {
+              "example-1": {
+                "firstname": "d7lxre",
+                "lastname": "i7wb95",
+                "email": "support@streamovations.be",
+                "refId": "JV01",
+                "active": true,
+                "division": "507f1f77bcf86cd799439011",
+                "role": "507f1f77bcf86cd79947896"
+              }
             }
           }
         ],
@@ -2592,7 +2603,7 @@
         "lastname": "i7wb95",
         "email": "support@streamovations.be",
         "refId": "JV01",
-        "active" : true,
+        "active": true,
         "division": "507f1f77bcf86cd799439011",
         "role": "507f1f77bcf86cd79947896"
       },
@@ -2664,7 +2675,7 @@
         "lastname": "i7wb95",
         "email": "support@streamovations.be",
         "refId": "JV01",
-        "active" : true,
+        "active": true,
         "division": "507f1f77bcf86cd799439011",
         "role": "507f1f77bcf86cd79947896"
       },
