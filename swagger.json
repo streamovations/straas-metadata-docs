@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "",
+    "description": "Streamovations Metadata API",
     "version": "0.0.9",
     "title": "Streamovations Metadata API",
     "termsOfService": "",
@@ -2510,32 +2510,6 @@
         "section": "Topics"
       }
     },
-    "/{customer}/metadata/metadata/session/{session}": {
-      "parameters": [
-        {
-          "name": "customer",
-          "in": "path",
-          "required": true,
-          "type": "string",
-          "description": "Customer unique name",
-          "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255
-        },
-        {
-          "name": "session",
-          "in": "path",
-          "required": true,
-          "type": "integer",
-          "description": "Session unique id",
-          "x-example": 100,
-          "minimum": 1
-        }
-      ],
-      "x-restlet": {
-        "section": "Other Metadata"
-      }
-    },
     "/{customer}/metadata/metadata/session/{session}/type/{type}": {
       "parameters": [
         {
@@ -2565,30 +2539,6 @@
       ],
       "x-restlet": {
         "section": "Other Metadata"
-      }
-    },
-    "/system/status": {
-      "get": {
-        "tags": [
-          "System"
-        ],
-        "summary": "Get system status",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Status 200"
-          },
-          "401": {
-            "description": "Status 401"
-          },
-          "500": {
-            "description": "Status 500"
-          }
-        },
-        "operationId": "getSystemStatus"
-      },
-      "x-restlet": {
-        "section": "System"
       }
     }
   },
