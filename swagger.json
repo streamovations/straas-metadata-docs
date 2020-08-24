@@ -152,6 +152,40 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DelegateResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5d5aad6c39d02e4c4bc3fb45",
+                      "firstname": "John",
+                      "lastname": "Doe",
+                      "description": null,
+                      "photo": {
+                        "_id": "5d5aad6c39d02e4c4bc3fb45",
+                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                        "size": 2751,
+                        "mimeType": "image/png",
+                        "encoding": "7bit"
+                      },
+                      "division": {
+                        "_id": "5d5aad6c39d02e4c4bc3fb45",
+                        "photo": {
+                          "_id": "5d5aad6c39d02e4c4bc3fb45",
+                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                          "size": 2751,
+                          "mimeType": "image/png",
+                          "encoding": "7bit"
+                        },
+                        "name": "NV-A"
+                      },
+                      "role": {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aad6c39d02e4c4bc3fb45"
+                      },
+                      "email": "user@example.com"
+                    }
+                  }
                 }
               }
             }
