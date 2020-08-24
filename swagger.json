@@ -22,7 +22,7 @@
     "application/json"
   ],
   "paths": {
-    "//metadata/delegates/{customer}": {
+    "/{customer}/metadata/delegates": {
       "get": {
         "tags": [
           "Delegates"
