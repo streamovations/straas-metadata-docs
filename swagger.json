@@ -111,7 +111,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getDelegates"
+        "operationId": "getDelegates",
+        "description": "List Delegates"
       },
       "post": {
         "tags": [
@@ -143,7 +144,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createDelegate"
+        "operationId": "createDelegate",
+        "description": "Create a Delegate"
       },
       "parameters": [
         {
@@ -223,7 +225,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getDelegate"
+        "operationId": "getDelegate",
+        "description": "Get a Delegate by ID"
       },
       "put": {
         "tags": [
@@ -261,7 +264,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createOrUpdateDelegate"
+        "operationId": "updateDelegate",
+        "description": "Update a Delegate by ID"
       },
       "delete": {
         "tags": [
@@ -286,7 +290,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteDelegate"
+        "operationId": "deleteDelegate",
+        "description": "Delete a Delegate by ID"
       },
       "parameters": [
         {
@@ -305,8 +310,7 @@
           "required": true,
           "type": "string",
           "description": "ObjectId for delegate",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -325,7 +329,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "getDivisions"
+        "operationId": "getDivisions",
+        "description": "List Divisions"
       },
       "post": {
         "tags": [
@@ -359,7 +364,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "createDivision"
+        "operationId": "createDivision",
+        "description": "Create a Division"
       },
       "parameters": [
         {
@@ -388,7 +394,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "getDivision"
+        "operationId": "getDivision",
+        "description": "Get a Division by ID"
       },
       "put": {
         "tags": [
@@ -416,7 +423,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "createOrUpdateDivision"
+        "operationId": "createOrUpdateDivision",
+        "description": "Update a Division by ID"
       },
       "delete": {
         "tags": [
@@ -429,7 +437,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "deleteDivision"
+        "operationId": "deleteDivision",
+        "description": "Delete a Division by Id"
       },
       "parameters": [
         {
@@ -446,8 +455,7 @@
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -466,7 +474,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "exportDivisions"
+        "operationId": "exportDivisions",
+        "description": "Export Divisions for download"
       },
       "parameters": [
         {
@@ -548,7 +557,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getRoles"
+        "operationId": "getRoles",
+        "description": "List Roles"
       },
       "post": {
         "tags": [
@@ -570,7 +580,7 @@
                 },
                 "priority": {
                   "type": "integer",
-                  "example": "0",
+                  "example": 0,
                   "minimum": 0
                 }
               },
@@ -597,7 +607,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createRole"
+        "operationId": "createRole",
+        "description": "Create a Role"
       },
       "parameters": [
         {
@@ -685,7 +696,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getRole"
+        "operationId": "getRole",
+        "description": "Get a Role by ID"
       },
       "put": {
         "tags": [
@@ -707,7 +719,7 @@
                 },
                 "priority": {
                   "type": "integer",
-                  "example": "0",
+                  "example": 0,
                   "minimum": 0
                 }
               }
@@ -734,7 +746,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "updateRole"
+        "operationId": "updateRole",
+        "description": "Update a Role by ID"
       },
       "delete": {
         "tags": [
@@ -762,7 +775,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteRole"
+        "operationId": "deleteRole",
+        "description": "Delete a Role by ID"
       },
       "parameters": [
         {
@@ -780,8 +794,7 @@
           "in": "path",
           "required": true,
           "type": "string",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -885,7 +898,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getMirophones"
+        "operationId": "getMirophones",
+        "description": "List Microphones"
       },
       "post": {
         "tags": [
@@ -963,7 +977,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createMicrophone"
+        "operationId": "createMicrophone",
+        "description": "Create a Microphone"
       },
       "parameters": [
         {
@@ -1005,7 +1020,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getMicrophone"
+        "operationId": "getMicrophone",
+        "description": "Get a Microphone by ID"
       },
       "put": {
         "tags": [
@@ -1075,7 +1091,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "updateMicrophone"
+        "operationId": "updateMicrophone",
+        "description": "Update a Microhphone by ID"
       },
       "delete": {
         "tags": [
@@ -1100,7 +1117,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteMicrophone"
+        "operationId": "deleteMicrophone",
+        "description": "Delete a Microphone by ID"
       },
       "parameters": [
         {
@@ -1119,8 +1137,7 @@
           "required": true,
           "type": "string",
           "description": "objectID",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -1223,7 +1240,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getMicrophonesInRoom"
+        "operationId": "getMicrophonesInRoom",
+        "description": "Get Microhpones by RoomID"
       },
       "parameters": [
         {
@@ -1320,7 +1338,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getAttendees"
+        "operationId": "getAttendees",
+        "description": "List Attendees"
       },
       "post": {
         "tags": [
@@ -1382,7 +1401,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createAttendee"
+        "operationId": "createAttendee",
+        "description": "Add Attendee for Session"
       },
       "parameters": [
         {
@@ -1427,7 +1447,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getAttendee"
+        "operationId": "getAttendee",
+        "description": "Get Attendee by ID"
       },
       "put": {
         "tags": [
@@ -1461,7 +1482,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "updateAttendee"
+        "operationId": "updateAttendee",
+        "description": "Update Attendee by ID"
       },
       "delete": {
         "tags": [
@@ -1489,7 +1511,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteAttendee"
+        "operationId": "deleteAttendee",
+        "description": "Delete Attendee by ID"
       },
       "parameters": [
         {
@@ -1508,8 +1531,7 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -1599,7 +1621,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getAttendeesBySession"
+        "operationId": "getAttendeesBySession",
+        "description": "Get Attendees by Session"
       },
       "parameters": [
         {
@@ -1714,7 +1737,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getSpeeches"
+        "operationId": "getSpeeches",
+        "description": "List Speeches"
       },
       "parameters": [
         {
@@ -1756,7 +1780,7 @@
             "description": "Status 500"
           }
         },
-        "description": "",
+        "description": "Get Speech by ID",
         "operationId": "getSpeech"
       },
       "delete": {
@@ -1785,7 +1809,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteSpeech"
+        "operationId": "deleteSpeech",
+        "description": "Delete Speech by ID"
       },
       "parameters": [
         {
@@ -1804,8 +1829,7 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -1866,7 +1890,8 @@
             "description": "Internal Server error"
           }
         },
-        "operationId": "updateSpeechStatus"
+        "operationId": "updateSpeechStatus",
+        "description": "Update Microphone Status - Creates Speech Entry based on status, enable microphone results in a new speech entry with timestamp as start"
       },
       "parameters": [
         {
@@ -1981,7 +2006,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getSpeechesBySession"
+        "operationId": "getSpeechesBySession",
+        "description": "Get Speeches by Session"
       },
       "parameters": [
         {
@@ -2088,7 +2114,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "createTopic"
+        "operationId": "createTopic",
+        "description": "Create a Topic for Session"
       },
       "parameters": [
         {
@@ -2131,7 +2158,7 @@
           }
         },
         "operationId": "getTopic",
-        "description": ""
+        "description": "Get a Topic for ID"
       },
       "put": {
         "tags": [
@@ -2209,7 +2236,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "updateTopic"
+        "operationId": "updateTopic",
+        "description": "Update a Topic for ID"
       },
       "delete": {
         "tags": [
@@ -2234,7 +2262,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "deleteTopic"
+        "operationId": "deleteTopic",
+        "description": "Delete Topic for ID"
       },
       "parameters": [
         {
@@ -2253,8 +2282,7 @@
           "required": true,
           "type": "string",
           "description": "objectId",
-          "x-example": "5ce92d6a7fc5fa37c33eb885",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "x-example": "5ce92d6a7fc5fa37c33eb885"
         }
       ],
       "x-restlet": {
@@ -2348,7 +2376,8 @@
             "description": "Status 500"
           }
         },
-        "operationId": "getTopicsBySession"
+        "operationId": "getTopicsBySession",
+        "description": "Get Topics by Session"
       },
       "parameters": [
         {
@@ -2402,7 +2431,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "stopTopic"
+        "operationId": "stopTopic",
+        "description": "Stop a Topic by ID"
       },
       "parameters": [
         {
@@ -2417,8 +2447,7 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "type": "string"
         }
       ],
       "x-restlet": {
@@ -2452,7 +2481,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "startTopic"
+        "operationId": "startTopic",
+        "description": "Start a Topic by ID"
       },
       "parameters": [
         {
@@ -2467,8 +2497,7 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "type": "string"
         }
       ],
       "x-restlet": {
@@ -2487,7 +2516,8 @@
             "description": "Status 200"
           }
         },
-        "operationId": "resetTopic"
+        "operationId": "resetTopic",
+        "description": "Reset a Topic by ID"
       },
       "parameters": [
         {
@@ -2502,8 +2532,7 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
-          "pattern": "/^[0-9a-fA-F]{24}$/"
+          "type": "string"
         }
       ],
       "x-restlet": {
@@ -2537,11 +2566,10 @@
     },
     "ID": {
       "type": "string",
-      "example": "5ce92d6a7fc5fa37c33eb885",
+      "example": "507f1f77bcf86cd799439011",
       "x-restlet": {
         "section": "Data Types"
-      },
-      "pattern": "/^[0-9a-fA-F]{24}$/"
+      }
     },
     "room": {
       "type": "integer",
@@ -2559,7 +2587,15 @@
     },
     "delegates": {
       "type": "object",
-      "example": "{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
+      "example": {
+        "firstname": "d7lxre",
+        "lastname": "i7wb95",
+        "email": "support@streamovations.be",
+        "refId": "JV01",
+        "active" : true,
+        "division": "507f1f77bcf86cd799439011",
+        "role": "507f1f77bcf86cd79947896"
+      },
       "x-restlet": {
         "section": "Data Types"
       },
@@ -2623,7 +2659,15 @@
           "type": "string"
         }
       },
-      "example": "\n{\n   \"firstname\" : \"d7lxre\",\n   \"lastname\" : \"i7wb95\"\n   \"email\": \"support@streamovations.be\"\n   \"refId\": \"JV01\",\n   \"active\" : true,\n   \"division\": \"CD&V\",\n   \"role\": \"burgemeester\"\n}",
+      "example": {
+        "firstname": "d7lxre",
+        "lastname": "i7wb95",
+        "email": "support@streamovations.be",
+        "refId": "JV01",
+        "active" : true,
+        "division": "507f1f77bcf86cd799439011",
+        "role": "507f1f77bcf86cd79947896"
+      },
       "x-restlet": {
         "section": "Data Types"
       }
