@@ -15,12 +15,6 @@
       "url": "https://opensource.org/licenses/GPL-3.0"
     }
   },
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
   "paths": {
     "/{customer}/metadata/delegates": {
       "get": {
@@ -2735,8 +2729,8 @@
     "securitySchemes": {
       "JWT Token": {
         "name": "API Key",
-        "type": "apiKey",
-        "in": "query"
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   },
