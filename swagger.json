@@ -2385,7 +2385,36 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5f44ce018365ec18ae854022",
+                      "name": "Topic 1",
+                      "description": "Topic Content 1",
+                      "status": true,
+                      "start": {
+                        "realTime": "2020-08-25T08:42:26.271Z"
+                      },
+                      "stop": {
+                        "realTime": "2020-08-25T08:44:42.887Z",
+                        "relativeTime": 136
+                      },
+                      "priority": 1,
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2428,7 +2457,36 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5f44ce018365ec18ae854022",
+                      "name": "Topic 1",
+                      "description": "Topic Content 1",
+                      "status": true,
+                      "start": {
+                        "realTime": "2020-08-25T08:42:26.271Z"
+                      },
+                      "stop": {
+                        "realTime": "2020-08-25T08:44:42.887Z",
+                        "relativeTime": 136
+                      },
+                      "priority": 1,
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2507,7 +2565,36 @@
         ],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5f44ce018365ec18ae854022",
+                      "name": "Topic 1",
+                      "description": "Topic Content 1",
+                      "status": true,
+                      "start": {
+                        "realTime": "2020-08-25T08:42:26.271Z"
+                      },
+                      "stop": {
+                        "realTime": "2020-08-25T08:44:42.887Z",
+                        "relativeTime": 136
+                      },
+                      "priority": 1,
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2533,7 +2620,36 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "Status 200"
+            "description": "Status 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5f44ce018365ec18ae854022",
+                      "name": "Topic 1",
+                      "description": "Topic Content 1",
+                      "status": true,
+                      "start": {
+                        "realTime": "2020-08-25T08:42:26.271Z"
+                      },
+                      "stop": {
+                        "realTime": "2020-08-25T08:44:42.887Z",
+                        "relativeTime": 136
+                      },
+                      "priority": 1,
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -2961,7 +3077,7 @@
         }
       ]
     },
-    "//metadata/divisions/upload/{customer}/{id}": {
+    "/{customer}/metadata/divisions/upload/{id}": {
       "parameters": [
         {
           "schema": {
@@ -2980,12 +3096,6 @@
           "required": true
         }
       ],
-      "get": {
-        "summary": "",
-        "tags": [],
-        "operationId": "",
-        "description": ""
-      },
       "post": {
         "summary": "Upload a Division Photo",
         "operationId": "uploadPhotoDivision",
