@@ -173,7 +173,22 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "getDelegates",
@@ -296,7 +311,22 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "createDelegate",
@@ -390,7 +420,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "exportDelegates"
@@ -478,7 +515,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDelegate",
@@ -559,7 +603,22 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "updateDelegate",
@@ -627,7 +686,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteDelegate",
@@ -779,6 +845,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDivisions",
@@ -876,6 +952,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 }
               }
             }
@@ -988,6 +1074,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDivision",
@@ -1065,6 +1161,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 }
               }
             }
@@ -1147,6 +1253,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 }
               }
             }
@@ -1430,7 +1546,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getRoles",
@@ -1515,7 +1638,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createRole",
@@ -1616,7 +1746,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "exportRoles"
@@ -1704,7 +1841,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getRole",
@@ -1793,7 +1937,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "updateRole",
@@ -1861,7 +2012,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteRole",
@@ -2072,7 +2230,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getMirophones",
@@ -2193,7 +2358,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createMicrophone",
@@ -2282,7 +2454,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getMicrophone",
@@ -2639,7 +2818,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getMicrophonesInRoom",
@@ -2903,7 +3089,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getAttendees",
@@ -3084,7 +3277,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createAttendee",
@@ -3192,7 +3392,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getAttendee",
@@ -3355,6 +3562,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "updateAttendee",
@@ -3440,7 +3657,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteAttendee",
@@ -3681,7 +3905,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getAttendeesBySession",
@@ -3907,7 +4138,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getSpeeches",
@@ -4023,7 +4261,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "description": "Get Speech by ID",
@@ -4118,7 +4363,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteSpeech",
@@ -4380,7 +4632,14 @@
             }
           },
           "500": {
-            "description": "Internal Server error"
+            "description": "Internal Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "updateSpeechStatus",
@@ -4657,7 +4916,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getSpeechesBySession",
@@ -4840,7 +5106,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "createTopic",
@@ -4960,7 +5233,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getTopic",
@@ -5103,7 +5383,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "updateTopic",
@@ -5217,7 +5504,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "deleteTopic",
@@ -5383,7 +5677,14 @@
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getTopicsBySession",
@@ -5517,6 +5818,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 }
               }
             }
@@ -5672,6 +5983,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "startTopic",
@@ -5809,6 +6130,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "resetTopic",
@@ -5934,6 +6265,16 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                }
+              }
+            }
           }
         },
         "summary": "Upload a Delegate Photo",
@@ -6038,6 +6379,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 }
               }
             }
@@ -7432,6 +7783,26 @@
           "example": {}
         },
         "description": "Customer Endpoint Validation Error"
+      },
+      "ValidateServerErrorResponse": {
+        "title": "ValidateServerErrorResponse",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "default": "InternalServerError",
+            "example": "InternalServerError"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "error": true,
+            "message": "InternalServerError"
+          }
+        }
       }
     }
   },
