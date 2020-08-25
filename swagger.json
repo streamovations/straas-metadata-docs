@@ -3387,6 +3387,27 @@
           "lastname",
           "email"
         ]
+      },
+      "Delegate_ID": {
+        "type": "string",
+        "title": "Delegate_ID",
+        "x-examples": {},
+        "example": "5d5aad5e39d02e4c4bc3fb40"
+      },
+      "Role_ID": {
+        "type": "string",
+        "title": "Role_ID",
+        "example": "5d5aadd539d02e4c4bc3fb5c"
+      },
+      "Division_ID": {
+        "type": "string",
+        "title": "Division_ID",
+        "example": "5d5aad5e39d02e4c4bc3fb40"
+      },
+      "Microphone_ID": {
+        "type": "string",
+        "title": "Microphone_ID",
+        "example": "5f44bbe78365ec18ae854004"
       }
     }
   },
