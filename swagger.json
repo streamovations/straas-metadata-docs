@@ -29,14 +29,21 @@
             "required": false,
             "type": "boolean",
             "description": "Filter for active or inactive delegates",
-            "x-example": true
+            "x-example": true,
+            "schema": {
+              "type": "boolean"
+            }
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
             "type": "string",
-            "description": "Paginate filter starting from given delegate id in combination with limit"
+            "description": "Paginate filter starting from given delegate id in combination with limit",
+            "schema": {
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405d"
+            }
           },
           {
             "name": "limit",
@@ -47,7 +54,14 @@
             "default": 100,
             "minimum": 1,
             "maximum": 100,
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
           },
           {
             "name": "sortOrder",
@@ -59,7 +73,16 @@
               "asc",
               "desc"
             ],
-            "x-example": "asc"
+            "x-example": "asc",
+            "schema": {
+              "default": "desc",
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "example": "desc"
+            }
           },
           {
             "name": "sortField",
@@ -71,21 +94,38 @@
               "createdAt",
               "updatedAt"
             ],
-            "x-example": "createdAt"
+            "x-example": "createdAt",
+            "schema": {
+              "type": "string",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "createdAt"
+            }
           },
           {
             "name": "firstname",
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "Michel"
+            "x-example": "Michel",
+            "schema": {
+              "type": "string",
+              "example": "John"
+            }
           },
           {
             "name": "lastname",
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "Drets"
+            "x-example": "Drets",
+            "schema": {
+              "type": "string",
+              "example": "Doe"
+            }
           }
         ],
         "responses": {
@@ -779,7 +819,11 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405d"
+            }
           },
           {
             "name": "limit",
@@ -789,7 +833,14 @@
             "default": 100,
             "minimum": 1,
             "maximum": 100,
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "example": 100,
+              "default": 100
+            }
           },
           {
             "name": "sortOrder",
@@ -800,7 +851,16 @@
               "asc",
               "desc"
             ],
-            "x-example": "asc"
+            "x-example": "asc",
+            "schema": {
+              "type": "string",
+              "default": "desc",
+              "example": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
           },
           {
             "name": "sortField",
@@ -813,7 +873,17 @@
               "function",
               "name"
             ],
-            "x-example": "createdAt"
+            "x-example": "createdAt",
+            "schema": {
+              "type": "string",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt",
+                "name"
+              ],
+              "example": "createdAt"
+            }
           }
         ],
         "responses": {
@@ -1167,14 +1237,25 @@
             "in": "query",
             "required": false,
             "type": "integer",
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "5ce92d6a7fc5fa37c33eb885"
+            "x-example": "5ce92d6a7fc5fa37c33eb885",
+            "schema": {
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405d"
+            }
           },
           {
             "name": "sortOrder",
@@ -1185,7 +1266,16 @@
               "asc",
               "desc"
             ],
-            "x-example": "desc"
+            "x-example": "desc",
+            "schema": {
+              "type": "string",
+              "default": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "example": "desc"
+            }
           },
           {
             "name": "sortField",
@@ -1201,7 +1291,16 @@
               "uuid",
               "room"
             ],
-            "x-example": "status"
+            "x-example": "status",
+            "schema": {
+              "type": "string",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "createdAt"
+            }
           },
           {
             "name": "status",
@@ -1214,14 +1313,20 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "2"
+            "x-example": "2",
+            "schema": {
+              "type": "integer"
+            }
           },
           {
             "name": "refid",
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "2-1"
+            "x-example": "2-1",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1672,7 +1777,8 @@
             "required": false,
             "type": "string",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405d"
             }
           },
           {
