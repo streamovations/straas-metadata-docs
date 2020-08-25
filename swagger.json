@@ -1672,7 +1672,90 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 201"
+            "description": "Status 201",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttendeeResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5f4385e18365ec18ae853f6d",
+                      "delegate": {
+                        "_id": "5d5aad5e39d02e4c4bc3fb40",
+                        "firstname": "John",
+                        "lastname": "Doe",
+                        "description": "string",
+                        "photo": {
+                          "_id": "5f44bbe68365ec18ae854003",
+                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                          "size": 2751,
+                          "mimeType": "image/png",
+                          "encoding": "7bit",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z"
+                        },
+                        "division": {
+                          "_id": "5d5aad5e39d02e4c4bc3fb40",
+                          "photo": {
+                            "_id": "5f44bbe68365ec18ae854003",
+                            "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                            "size": 2751,
+                            "mimeType": "image/png",
+                            "encoding": "7bit",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z"
+                          },
+                          "name": "VLD",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "role": {
+                          "priority": 1,
+                          "name": "Burgemeester",
+                          "_id": "5d5aadd539d02e4c4bc3fb5c",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "email": "user@example.com",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "refId": "JD01",
+                        "__v": 0
+                      },
+                      "microphone": {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "role": {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aadd539d02e4c4bc3fb5c",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Status 400"
@@ -1688,7 +1771,26 @@
           }
         },
         "operationId": "createAttendee",
-        "description": "Add Attendee for Session"
+        "description": "Add Attendee for Session",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttendeeCreateRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "delegate": "5d5aad5e39d02e4c4bc3fb40",
+                    "role": "5d5aadd539d02e4c4bc3fb5c",
+                    "microphone": "5f44bbe78365ec18ae854004",
+                    "session": 100
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -4401,6 +4503,164 @@
         "x-tags": [
           "Speeches"
         ]
+      },
+      "AttendeeResponse": {
+        "title": "AttendeeResponse",
+        "type": "object",
+        "x-tags": [
+          "Attendees"
+        ],
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/Attendee_ID"
+          },
+          "delegate": {
+            "$ref": "#/components/schemas/DelegateResponse"
+          },
+          "microphone": {
+            "$ref": "#/components/schemas/MicrophoneResponse"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleResponse"
+          },
+          "session": {
+            "$ref": "#/components/schemas/Session"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
+          }
+        },
+        "required": [
+          "_id",
+          "delegate",
+          "microphone",
+          "role",
+          "session",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ],
+        "x-examples": {
+          "example": {
+            "_id": "5f4385e18365ec18ae853f6d",
+            "delegate": {
+              "_id": "5d5aad5e39d02e4c4bc3fb40",
+              "firstname": "John",
+              "lastname": "Doe",
+              "description": "string",
+              "photo": {
+                "_id": "5f44bbe68365ec18ae854003",
+                "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                "size": 2751,
+                "mimeType": "image/png",
+                "encoding": "7bit",
+                "createdAt": "2020-08-25T08:40:40.601Z",
+                "updatedAt": "2020-08-25T08:44:42.900Z"
+              },
+              "division": {
+                "_id": "5d5aad5e39d02e4c4bc3fb40",
+                "photo": {
+                  "_id": "5f44bbe68365ec18ae854003",
+                  "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                  "size": 2751,
+                  "mimeType": "image/png",
+                  "encoding": "7bit",
+                  "createdAt": "2020-08-25T08:40:40.601Z",
+                  "updatedAt": "2020-08-25T08:44:42.900Z"
+                },
+                "name": "VLD",
+                "createdAt": "2020-08-25T08:40:40.601Z",
+                "updatedAt": "2020-08-25T08:44:42.900Z",
+                "__v": 0
+              },
+              "role": {
+                "priority": 1,
+                "name": "Burgemeester",
+                "_id": "5d5aadd539d02e4c4bc3fb5c",
+                "createdAt": "2020-08-25T08:40:40.601Z",
+                "updatedAt": "2020-08-25T08:44:42.900Z",
+                "__v": 0
+              },
+              "email": "user@example.com",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z",
+              "refId": "JD01",
+              "__v": 0
+            },
+            "microphone": {
+              "_id": "5f44bbe78365ec18ae854004",
+              "name": "Microphone 1",
+              "uuid": "mic1",
+              "id": 1,
+              "status": true,
+              "description": "string",
+              "room": 1,
+              "manufacturer": "televic",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z",
+              "__v": 0
+            },
+            "role": {
+              "priority": 1,
+              "name": "Burgemeester",
+              "_id": "5d5aadd539d02e4c4bc3fb5c",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z",
+              "__v": 0
+            },
+            "session": 100,
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "__v": 0
+          }
+        },
+        "description": ""
+      },
+      "Attendee_ID": {
+        "type": "string",
+        "title": "Attendee_ID",
+        "example": "5f4385e18365ec18ae853f6d",
+        "x-examples": {
+          "example": "5f4385e18365ec18ae853f6d"
+        }
+      },
+      "AttendeeCreateRequest": {
+        "title": "AttendeeCreateRequest",
+        "type": "object",
+        "properties": {
+          "delegate": {
+            "$ref": "#/components/schemas/Delegate_ID"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role_ID"
+          },
+          "microphone": {
+            "$ref": "#/components/schemas/Microphone_ID"
+          },
+          "session": {
+            "$ref": "#/components/schemas/Session"
+          }
+        },
+        "required": [
+          "delegate",
+          "role",
+          "microphone",
+          "session"
+        ],
+        "x-examples": {
+          "example": {
+            "delegate": "5d5aad5e39d02e4c4bc3fb40",
+            "role": "5d5aadd539d02e4c4bc3fb5c",
+            "microphone": "5f44bbe78365ec18ae854004",
+            "session": 100
+          }
+        }
       }
     }
   },
