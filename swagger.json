@@ -2592,7 +2592,11 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "5cf909247805517211b124e7"
+            "x-example": "5cf909247805517211b124e7",
+            "schema": {
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405e"
+            }
           },
           {
             "name": "limit",
@@ -2602,7 +2606,14 @@
             "default": 100,
             "minimum": 1,
             "maximum": 100,
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
           },
           {
             "name": "sortOrder",
@@ -2613,7 +2624,10 @@
               "asc",
               "desc"
             ],
-            "x-example": "asc"
+            "x-example": "asc",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "sortField",
@@ -2627,14 +2641,28 @@
               "stop.realTime",
               "microphone.id"
             ],
-            "x-example": "createdAt"
+            "x-example": "createdAt",
+            "schema": {
+              "type": "string",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "createdAt"
+            }
           },
           {
             "name": "microphone",
             "in": "query",
             "required": false,
             "type": "integer",
-            "x-example": 5
+            "x-example": 5,
+            "schema": {
+              "type": "integer",
+              "example": 1,
+              "minimum": 1
+            }
           },
           {
             "name": "status",
@@ -2968,7 +2996,11 @@
             "in": "query",
             "required": false,
             "type": "string",
-            "x-example": "5cf909247805517211b124e7"
+            "x-example": "5cf909247805517211b124e7",
+            "schema": {
+              "type": "string",
+              "example": "5f44f1e48365ec18ae85405e"
+            }
           },
           {
             "name": "limit",
@@ -2978,7 +3010,14 @@
             "default": 100,
             "minimum": 1,
             "maximum": 100,
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
           },
           {
             "name": "sortOrder",
@@ -2989,7 +3028,16 @@
               "asc",
               "desc"
             ],
-            "x-example": "asc"
+            "x-example": "asc",
+            "schema": {
+              "type": "string",
+              "default": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "example": "desc"
+            }
           },
           {
             "name": "sortField",
@@ -3003,14 +3051,28 @@
               "stop.realTime",
               "microphone.id"
             ],
-            "x-example": "createdAt"
+            "x-example": "createdAt",
+            "schema": {
+              "type": "string",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "createdAt"
+            }
           },
           {
             "name": "microphone",
             "in": "query",
             "required": false,
             "type": "integer",
-            "x-example": 5
+            "x-example": 5,
+            "schema": {
+              "type": "integer",
+              "example": 1,
+              "minimum": 1
+            }
           },
           {
             "name": "status",
