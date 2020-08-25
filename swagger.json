@@ -3194,14 +3194,14 @@
         "example": 100,
         "minimum": 1,
         "x-examples": {
-          "example-1": 100
+          "example": 100
         }
       },
       "Room": {
         "type": "integer",
         "title": "Room",
         "x-examples": {
-          "example-1": 0
+          "example": 1
         },
         "example": 1,
         "minimum": 1
@@ -3211,10 +3211,10 @@
         "type": "object",
         "description": "",
         "x-examples": {
-          "example-1": {
-            "_id": "5d5aadd539d02e4c4bc3fb5c",
+          "example": {
             "priority": 1,
-            "name": "Test Name"
+            "name": "Burgemeester",
+            "_id": "5d5aadd539d02e4c4bc3fb5c"
           }
         },
         "properties": {
@@ -3235,7 +3235,7 @@
         "description": "",
         "example": 1,
         "x-examples": {
-          "example-1": 1
+          "example": 1
         }
       },
       "_id": {
@@ -3412,11 +3412,12 @@
         "example": "VLD"
       },
       "RoleName": {
-        "title": "RoleName",
         "type": "string",
+        "title": "RoleName",
         "x-examples": {
-          "example-1": "string"
-        }
+          "example": "Burgemeester"
+        },
+        "example": "Burgemeester"
       },
       "MicrophoneManufacturer": {
         "type": "string",
@@ -3547,7 +3548,10 @@
       "Role_ID": {
         "type": "string",
         "title": "Role_ID",
-        "example": "5d5aadd539d02e4c4bc3fb5c"
+        "example": "5d5aadd539d02e4c4bc3fb5c",
+        "x-examples": {
+          "example": "5d5aadd539d02e4c4bc3fb5c"
+        }
       },
       "Division_ID": {
         "type": "string",
@@ -3568,6 +3572,52 @@
         "example": "5f44bbe68365ec18ae854003",
         "x-examples": {
           "example": "5f44bbe68365ec18ae854003"
+        }
+      },
+      "Topic_ID": {
+        "type": "string",
+        "title": "Topic_ID",
+        "example": "5f44ce018365ec18ae854022",
+        "x-examples": {
+          "example": "5f44ce018365ec18ae854022"
+        }
+      },
+      "TopicName": {
+        "type": "string",
+        "title": "TopicName",
+        "example": "Topic 1",
+        "x-examples": {
+          "example": "Topic 1"
+        }
+      },
+      "TopicDescription": {
+        "type": "string",
+        "title": "TopicDescription",
+        "example": "Topic Content 1",
+        "x-examples": {
+          "example": "Topic Content 1"
+        }
+      },
+      "TopicResponse": {
+        "title": "TopicResponse",
+        "type": "object",
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/Topic_ID"
+          },
+          "name": {
+            "$ref": "#/components/schemas/TopicName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/TopicDescription"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "_id": "5f44ce018365ec18ae854022",
+            "name": "Topic 1",
+            "description": "Topic Content 1"
+          }
         }
       }
     }
