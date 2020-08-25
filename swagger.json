@@ -256,7 +256,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
                 "examples": {
                   "example": {
