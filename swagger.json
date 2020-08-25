@@ -3145,7 +3145,7 @@
         "title": "DelegatesResponse",
         "type": "object",
         "x-examples": {
-          "example-2": {
+          "example": {
             "_id": "5d5aad5e39d02e4c4bc3fb40",
             "firstname": "John",
             "lastname": "Doe",
@@ -3201,7 +3201,14 @@
           "email": {
             "$ref": "#/components/schemas/DelegateEmail"
           }
-        }
+        },
+        "required": [
+          "_id",
+          "firstname",
+          "lastname",
+          "division",
+          "role"
+        ]
       },
       "DelegateFirstName": {
         "title": "DelegateFirstName",
@@ -3261,7 +3268,7 @@
         },
         "properties": {
           "_id": {
-            "$ref": "#/components/schemas/_id"
+            "$ref": "#/components/schemas/Photo_ID"
           },
           "url": {
             "type": "string",
@@ -3408,6 +3415,11 @@
         "type": "string",
         "title": "Microphone_ID",
         "example": "5f44bbe78365ec18ae854004"
+      },
+      "Photo_ID": {
+        "type": "string",
+        "title": "Photo_ID",
+        "example": "5f44bbe68365ec18ae854003"
       }
     }
   },
