@@ -163,7 +163,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -278,6 +285,16 @@
               }
             }
           },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
+          },
           "500": {
             "description": "Status 500"
           }
@@ -336,7 +353,14 @@
             "description": "Status 200"
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401",
@@ -356,7 +380,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -423,7 +454,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -497,7 +535,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -558,7 +603,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -703,6 +755,16 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDivisions",
@@ -773,6 +835,33 @@
                       "error": "Request parameters did not validate"
                     }
                   }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -875,6 +964,16 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "getDivision",
@@ -942,6 +1041,16 @@
                       "error": "Token could not be verified"
                     }
                   }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -1014,6 +1123,16 @@
                       "error": "Token could not be verified"
                     }
                   }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -1112,6 +1231,16 @@
                       "error": "Token could not be verified"
                     }
                   }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -1277,7 +1406,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1345,10 +1481,24 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1442,7 +1592,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1523,7 +1680,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1605,7 +1769,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1666,7 +1837,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1870,7 +2048,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -1984,7 +2169,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2066,7 +2258,14 @@
             }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2155,10 +2354,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2202,10 +2422,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
