@@ -3072,7 +3072,7 @@
   ],
   "servers": [
     {
-      "url": "core-api.streamovations.be",
+      "url": "https://core-api.streamovations.be",
       "description": "demo"
     }
   ],
