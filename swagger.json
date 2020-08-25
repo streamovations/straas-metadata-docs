@@ -187,7 +187,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Status 201",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -231,7 +231,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -382,7 +396,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -415,7 +443,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -580,6 +622,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "createDivision",
@@ -677,6 +736,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "createOrUpdateDivision",
@@ -712,6 +788,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
                 }
               }
             }
@@ -969,7 +1062,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1140,7 +1247,21 @@
             "description": "Status 304"
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1176,7 +1297,21 @@
             "description": "Status 304"
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1430,7 +1565,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1558,7 +1707,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1591,7 +1754,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -1945,7 +2122,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -2091,7 +2282,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -2291,6 +2496,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "updateAttendee",
@@ -2335,7 +2557,21 @@
             "description": "Status 304"
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -2856,7 +3092,21 @@
             "description": "Status 304"
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -2957,6 +3207,12 @@
                     },
                     "status": {
                       "$ref": "#/components/schemas/SpeechStatus"
+                    },
+                    "attendee": {
+                      "$ref": "#/components/schemas/AttendeeResponse"
+                    },
+                    "microphone": {
+                      "$ref": "#/components/schemas/MicrophoneResponse"
                     }
                   },
                   "required": [
@@ -2964,7 +3220,9 @@
                     "session",
                     "uuid",
                     "timestamp",
-                    "status"
+                    "status",
+                    "attendee",
+                    "microphone"
                   ]
                 },
                 "examples": {
@@ -2974,7 +3232,92 @@
                       "session": 100,
                       "uuid": 1,
                       "timestamp": 1598261308917,
-                      "status": true
+                      "status": true,
+                      "attendee": {
+                        "_id": "5f4385e18365ec18ae853f6d",
+                        "delegate": {
+                          "_id": "5d5aad5e39d02e4c4bc3fb40",
+                          "firstname": "John",
+                          "lastname": "Doe",
+                          "description": "string",
+                          "photo": {
+                            "_id": "5f44bbe68365ec18ae854003",
+                            "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                            "size": 2751,
+                            "mimeType": "image/png",
+                            "encoding": "7bit",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z"
+                          },
+                          "division": {
+                            "_id": "5d5aad5e39d02e4c4bc3fb40",
+                            "photo": {
+                              "_id": "5f44bbe68365ec18ae854003",
+                              "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                              "size": 2751,
+                              "mimeType": "image/png",
+                              "encoding": "7bit",
+                              "createdAt": "2020-08-25T08:40:40.601Z",
+                              "updatedAt": "2020-08-25T08:44:42.900Z"
+                            },
+                            "name": "VLD",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z",
+                            "__v": 0
+                          },
+                          "role": {
+                            "priority": 1,
+                            "name": "Burgemeester",
+                            "_id": "5d5aadd539d02e4c4bc3fb5c",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z",
+                            "__v": 0
+                          },
+                          "email": "user@example.com",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "refId": "JD01",
+                          "__v": 0
+                        },
+                        "microphone": {
+                          "_id": "5f44bbe78365ec18ae854004",
+                          "name": "Microphone 1",
+                          "uuid": "mic1",
+                          "id": 1,
+                          "status": true,
+                          "description": "string",
+                          "room": 1,
+                          "manufacturer": "televic",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "role": {
+                          "priority": 1,
+                          "name": "Burgemeester",
+                          "_id": "5d5aadd539d02e4c4bc3fb5c",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "session": 100,
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "microphone": {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
                     }
                   }
                 }
@@ -2982,7 +3325,21 @@
             }
           },
           "400": {
-            "description": "Validation Error"
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized Request"
@@ -3005,7 +3362,7 @@
                   "session": {
                     "$ref": "#/components/schemas/Session"
                   },
-                  "start": {
+                  "timestamp": {
                     "$ref": "#/components/schemas/SpeechStart"
                   },
                   "status": {
@@ -3018,7 +3375,7 @@
                 "required": [
                   "room",
                   "session",
-                  "start",
+                  "timestamp",
                   "status",
                   "microphone"
                 ]
@@ -3353,7 +3710,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -3542,7 +3913,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -3563,7 +3948,7 @@
                 "$ref": "#/components/schemas/TopicUpdateRequest"
               },
               "examples": {
-                "example-1": {
+                "example": {
                   "value": {
                     "name": "Topic 1",
                     "description": "Topic Content 1",
@@ -3621,7 +4006,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401"
@@ -3839,6 +4238,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "stopTopic",
@@ -3939,6 +4355,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "startTopic",
@@ -4024,6 +4457,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "resetTopic",
@@ -4097,6 +4547,23 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "summary": "Upload a Delegate Photo",
@@ -4153,6 +4620,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
                 }
               }
             }
@@ -5485,6 +5969,22 @@
           "example": {
             "name": "VLD",
             "description": "string"
+          }
+        }
+      },
+      "ValidateErrorResponse": {
+        "title": "ValidateErrorResponse",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "default": "Request parameters did not validate",
+            "example": "Request parameters did not validate"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "error": "Request parameters did not validate"
           }
         }
       }
