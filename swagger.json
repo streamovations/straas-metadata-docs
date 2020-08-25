@@ -7391,7 +7391,8 @@
           "example": {
             "error": "Request parameters did not validate"
           }
-        }
+        },
+        "description": "Query or Body parameter Validation Error"
       },
       "ValidateAuthErrorResponse": {
         "title": "ValidateAuthErrorResponse",
@@ -7407,14 +7408,16 @@
           "example": {
             "error": "Token could not be verified"
           }
-        }
+        },
+        "description": "Auth Validation Error"
       },
       "ValidateEndpointErrorResponse": {
         "title": "ValidateEndpointErrorResponse",
         "type": "object",
         "x-examples": {
           "example": {}
-        }
+        },
+        "description": "Customer Endpoint Validation Error"
       }
     }
   },
