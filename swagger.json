@@ -5346,13 +5346,19 @@
           "role",
           "division",
           "refId"
+        ],
+        "x-tags": [
+          "Delegates"
         ]
       },
       "Delegate_ID": {
         "type": "string",
         "title": "Delegate_ID",
         "x-examples": {},
-        "example": "5d5aad5e39d02e4c4bc3fb40"
+        "example": "5d5aad5e39d02e4c4bc3fb40",
+        "x-tags": [
+          "Delegates"
+        ]
       },
       "Role_ID": {
         "type": "string",
@@ -5719,7 +5725,10 @@
         "example": "5f4387caad10e2185ffd74a6",
         "x-examples": {
           "example": "5f4387caad10e2185ffd74a6"
-        }
+        },
+        "x-tags": [
+          "Speeches"
+        ]
       },
       "SpeechStart": {
         "type": "integer",
@@ -5937,7 +5946,10 @@
             "role": "5d5aadd539d02e4c4bc3fb5c",
             "microphone": "5f44bbe78365ec18ae854004"
           }
-        }
+        },
+        "x-tags": [
+          "Attendees"
+        ]
       },
       "DivisionCreateRequest": {
         "title": "DivisionCreateRequest",
@@ -5952,6 +5964,9 @@
         },
         "required": [
           "name"
+        ],
+        "x-tags": [
+          "Divisions"
         ]
       },
       "DivisionUpdateRequest": {
@@ -5970,7 +5985,10 @@
             "name": "VLD",
             "description": "string"
           }
-        }
+        },
+        "x-tags": [
+          "Divisions"
+        ]
       },
       "ValidateErrorResponse": {
         "title": "ValidateErrorResponse",
