@@ -2900,7 +2900,89 @@
     },
     "/{customer}/metadata/delegates/upload/{id}": {
       "post": {
-        "description": ""
+        "description": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "upload": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelegateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{customer}/metadata/divisions/upload/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "customer",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": ""
+      },
+      "post": {
+        "summary": "",
+        "operationId": "uploadPhotoDivision",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DivisionResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "upload": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -3230,7 +3312,7 @@
         "title": "DivisionResponse",
         "type": "object",
         "x-examples": {
-          "example-1": {
+          "example": {
             "_id": "5d5aad5e39d02e4c4bc3fb40",
             "photo": {
               "_id": "5d5aad6c39d02e4c4bc3fb48",
@@ -3252,7 +3334,11 @@
           "name": {
             "$ref": "#/components/schemas/DivisionName"
           }
-        }
+        },
+        "required": [
+          "_id",
+          "name"
+        ]
       },
       "PhotoResponse": {
         "title": "PhotoResponse",
