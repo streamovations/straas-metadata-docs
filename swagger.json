@@ -3122,7 +3122,7 @@
             "$ref": "#/components/schemas/RoleName"
           },
           "_id": {
-            "$ref": "#/components/schemas/_id"
+            "$ref": "#/components/schemas/Role_ID"
           }
         }
       },
@@ -3178,7 +3178,7 @@
         },
         "properties": {
           "_id": {
-            "$ref": "#/components/schemas/_id"
+            "$ref": "#/components/schemas/Delegate_ID"
           },
           "firstname": {
             "$ref": "#/components/schemas/DelegateFirstName"
@@ -3222,17 +3222,6 @@
       "DivisionResponse": {
         "title": "DivisionResponse",
         "type": "object",
-        "properties": {
-          "_id": {
-            "$ref": "#/components/schemas/_id"
-          },
-          "photo": {
-            "$ref": "#/components/schemas/PhotoResponse"
-          },
-          "name": {
-            "$ref": "#/components/schemas/DivisionName"
-          }
-        },
         "x-examples": {
           "example-1": {
             "_id": "5d5aad5e39d02e4c4bc3fb40",
@@ -3244,6 +3233,17 @@
               "encoding": "7bit"
             },
             "name": "NV-A"
+          }
+        },
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/Division_ID"
+          },
+          "photo": {
+            "$ref": "#/components/schemas/PhotoResponse"
+          },
+          "name": {
+            "$ref": "#/components/schemas/DivisionName"
           }
         }
       },
@@ -3340,7 +3340,7 @@
         "type": "object",
         "properties": {
           "_id": {
-            "$ref": "#/components/schemas/_id"
+            "$ref": "#/components/schemas/Microphone_ID"
           },
           "name": {
             "$ref": "#/components/schemas/MicrophoneName"
