@@ -426,7 +426,8 @@
               "type": "string"
             },
             "in": "query",
-            "name": "last"
+            "name": "last",
+            "description": "Paginate filter starting from given delegate id in combination with limit"
           },
           {
             "schema": {
@@ -437,7 +438,8 @@
               "example": 100
             },
             "in": "query",
-            "name": "limit"
+            "name": "limit",
+            "description": "Paginate filter for given limit started from last given delegate id"
           },
           {
             "schema": {
@@ -450,7 +452,8 @@
               ]
             },
             "in": "query",
-            "name": "sortOrder"
+            "name": "sortOrder",
+            "description": "Sort ascending or descending based on given sortField"
           },
           {
             "schema": {
@@ -464,7 +467,8 @@
               ]
             },
             "in": "query",
-            "name": "sortField"
+            "name": "sortField",
+            "description": "Sort ascending or descending based on given sortField"
           }
         ],
         "responses": {
@@ -519,13 +523,44 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "_id": "5d5aad5e39d02e4c4bc3fb40",
+                      "photo": {
+                        "_id": "5f44bbe68365ec18ae854003"
+                      },
+                      "name": "VLD",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
           }
         },
         "operationId": "createDivision",
-        "description": "Create a Division"
+        "description": "Create a Division",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivisionCreateRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "name": "VLD",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -548,7 +583,14 @@
           "Divisions"
         ],
         "summary": "Get a division",
-        "parameters": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200",
@@ -598,7 +640,24 @@
           }
         },
         "operationId": "createOrUpdateDivision",
-        "description": "Update a Division by ID"
+        "description": "Update a Division by ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivisionUpdateRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "name": "VLD",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -3756,88 +3815,6 @@
         "section": "Topics"
       }
     },
-    "": {
-      "parameters": [],
-      "get": {
-        "summary": "Your GET endpoint",
-        "tags": [],
-        "responses": {},
-        "operationId": ""
-      },
-      "post": {
-        "summary": "",
-        "operationId": "uploadPhotoDelegates",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DelegateResponse"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "_id": "5d5aad6c39d02e4c4bc3fb45",
-                      "firstname": "string",
-                      "lastname": "string",
-                      "description": "string",
-                      "photo": {
-                        "_id": "5d5aad6c39d02e4c4bc3fb45",
-                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
-                        "size": 2751,
-                        "mimeType": "image/png",
-                        "encoding": "7bit"
-                      },
-                      "division": {
-                        "_id": "5d5aad6c39d02e4c4bc3fb45",
-                        "photo": {
-                          "_id": "5d5aad6c39d02e4c4bc3fb45",
-                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
-                          "size": 2751,
-                          "mimeType": "image/png",
-                          "encoding": "7bit"
-                        },
-                        "name": "string"
-                      },
-                      "role": {
-                        "priority": 1,
-                        "name": "string",
-                        "_id": "5d5aad6c39d02e4c4bc3fb45"
-                      },
-                      "email": "user@example.com"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "upload": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "upload"
-                ]
-              },
-              "examples": {
-                "example-1": {
-                  "value": {}
-                }
-              }
-            }
-          },
-          "description": "Multipart form data post with binary data"
-        }
-      }
-    },
     "/{customer}/metadata/delegates/upload/{id}": {
       "post": {
         "description": "Upload a Delegate Photo",
@@ -5213,6 +5190,39 @@
             "delegate": "5d5aad5e39d02e4c4bc3fb40",
             "role": "5d5aadd539d02e4c4bc3fb5c",
             "microphone": "5f44bbe78365ec18ae854004"
+          }
+        }
+      },
+      "DivisionCreateRequest": {
+        "title": "DivisionCreateRequest",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/DivisionName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DivisionUpdateRequest": {
+        "title": "DivisionUpdateRequest",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/DivisionName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "name": "VLD",
+            "description": "string"
           }
         }
       }
