@@ -146,7 +146,21 @@
             "description": "Status 400"
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -248,7 +262,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -311,7 +339,21 @@
             "description": "Status 400"
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -362,6 +404,23 @@
           },
           "400": {
             "description": "Status 400"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -421,7 +480,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -468,7 +541,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -578,6 +665,40 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/DivisionResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
                   }
                 }
               }
@@ -720,6 +841,40 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "getDivision",
@@ -768,6 +923,23 @@
                   "example": {
                     "value": {
                       "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
                     }
                   }
                 }
@@ -823,6 +995,23 @@
                   "example": {
                     "value": {
                       "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
                     }
                   }
                 }
@@ -907,6 +1096,23 @@
                   "example": "attachment; filename=metadata-divisions.json"
                 },
                 "required": true
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           }
@@ -1037,10 +1243,38 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1174,10 +1408,38 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1226,14 +1488,39 @@
               }
             }
           },
-          "204": {
-            "description": "Status 204"
-          },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1283,9 +1570,6 @@
               }
             }
           },
-          "304": {
-            "description": "Status 304"
-          },
           "400": {
             "description": "Status 400",
             "content": {
@@ -1304,7 +1588,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1333,9 +1631,6 @@
               }
             }
           },
-          "304": {
-            "description": "Status 304"
-          },
           "400": {
             "description": "Status 400",
             "content": {
@@ -1354,7 +1649,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1527,10 +1836,38 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1630,7 +1967,21 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1681,10 +2032,38 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
             "description": "Status 403"
@@ -1961,13 +2340,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2207,10 +2621,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2367,10 +2802,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2436,17 +2892,49 @@
               }
             }
           },
-          "204": {
-            "description": "Status 204"
-          },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2585,6 +3073,33 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "updateAttendee",
@@ -2625,9 +3140,6 @@
               }
             }
           },
-          "304": {
-            "description": "Status 304"
-          },
           "400": {
             "description": "Status 400",
             "content": {
@@ -2646,10 +3158,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -2849,13 +3382,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3040,13 +3608,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3121,13 +3724,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3180,9 +3818,6 @@
               }
             }
           },
-          "304": {
-            "description": "Status 304"
-          },
           "400": {
             "description": "Status 400",
             "content": {
@@ -3201,10 +3836,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3442,7 +4098,31 @@
             }
           },
           "401": {
-            "description": "Unauthorized Request"
+            "description": "Unauthorized Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server error"
@@ -3678,13 +4358,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3843,10 +4558,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -3925,13 +4661,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -4050,10 +4821,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -4143,10 +4935,31 @@
             }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -4271,13 +5084,48 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
-            "description": "Status 401"
+            "description": "Status 401",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
           },
           "403": {
-            "description": "Status 403"
+            "description": "Status 403",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Status 500"
@@ -4387,6 +5235,33 @@
                       "error": "Request parameters did not validate"
                     }
                   }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -4515,6 +5390,33 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "startTopic",
@@ -4625,6 +5527,33 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "operationId": "resetTopic",
@@ -4723,6 +5652,33 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                }
+              }
+            }
           }
         },
         "summary": "Upload a Delegate Photo",
@@ -4800,6 +5756,33 @@
                       "error": "Request parameters did not validate"
                     }
                   }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
                 }
               }
             }
@@ -6153,8 +7136,8 @@
           "Divisions"
         ]
       },
-      "ValidateErrorResponse": {
-        "title": "ValidateErrorResponse",
+      "ValidateParamsErrorResponse": {
+        "title": "ValidateParamsErrorResponse",
         "type": "object",
         "properties": {
           "error": {
@@ -6167,6 +7150,29 @@
           "example": {
             "error": "Request parameters did not validate"
           }
+        }
+      },
+      "ValidateAuthErrorResponse": {
+        "title": "ValidateAuthErrorResponse",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "Token could not be verified",
+            "default": "Token could not be verified"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "error": "Token could not be verified"
+          }
+        }
+      },
+      "ValidateEndpointErrorResponse": {
+        "title": "ValidateEndpointErrorResponse",
+        "type": "object",
+        "x-examples": {
+          "example": {}
         }
       }
     }
