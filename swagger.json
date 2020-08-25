@@ -206,12 +206,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {}
+                "$ref": "#/components/schemas/DelegateCreateRequest"
               },
-              "examples": {}
+              "examples": {
+                "example": {
+                  "value": {
+                    "firstname": "string",
+                    "lastname": "string",
+                    "email": "user@example.com",
+                    "role": null
+                  }
+                }
+              }
             }
-          }
+          },
+          "description": ""
         }
       },
       "parameters": [
@@ -2928,7 +2937,10 @@
           }
         },
         "summary": "Upload a Delegate Photo",
-        "operationId": "uploadPhotoDelegate"
+        "operationId": "uploadPhotoDelegate",
+        "tags": [
+          "Delegates"
+        ]
       },
       "parameters": [
         {
@@ -3003,7 +3015,10 @@
             }
           }
         },
-        "description": "Upload a Division Photo"
+        "description": "Upload a Division Photo",
+        "tags": [
+          "Divisions"
+        ]
       }
     }
   },
@@ -3214,7 +3229,10 @@
           "example": {
             "priority": 1,
             "name": "Burgemeester",
-            "_id": "5d5aadd539d02e4c4bc3fb5c"
+            "_id": "5d5aadd539d02e4c4bc3fb5c",
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "__v": 0
           }
         },
         "properties": {
@@ -3226,8 +3244,25 @@
           },
           "_id": {
             "$ref": "#/components/schemas/Role_ID"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
           }
-        }
+        },
+        "required": [
+          "priority",
+          "name",
+          "_id",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ]
       },
       "Priority": {
         "type": "integer",
@@ -3238,12 +3273,6 @@
           "example": 1
         }
       },
-      "_id": {
-        "type": "string",
-        "title": "_id",
-        "x-examples": {},
-        "example": "5d5aad6c39d02e4c4bc3fb45"
-      },
       "DelegateResponse": {
         "title": "DelegatesResponse",
         "type": "object",
@@ -3252,31 +3281,43 @@
             "_id": "5d5aad5e39d02e4c4bc3fb40",
             "firstname": "John",
             "lastname": "Doe",
-            "description": null,
+            "description": "string",
             "photo": {
+              "_id": "5f44bbe68365ec18ae854003",
+              "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+              "size": 2751,
+              "mimeType": "image/png",
               "encoding": "7bit",
-              "mimeType": "image/jpeg",
-              "size": 5963,
-              "url": "https://metadata-cdn.streamovations.be/677cca3759f7fefb7d9e446a96a3144e",
-              "_id": "5d5aad5f39d02e4c4bc3fb43"
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z"
             },
             "division": {
-              "_id": "5ed65f97ad10e2185ffd4897",
+              "_id": "5d5aad5e39d02e4c4bc3fb40",
               "photo": {
-                "_id": "5d5aad7f39d02e4c4bc3fb4d",
-                "url": "https://metadata-cdn.streamovations.be/636cc866ab827a6947072c2f015ff495",
+                "_id": "5f44bbe68365ec18ae854003",
+                "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                "size": 2751,
                 "mimeType": "image/png",
                 "encoding": "7bit",
-                "size": 3865
+                "createdAt": "2020-08-25T08:40:40.601Z",
+                "updatedAt": "2020-08-25T08:44:42.900Z"
               },
-              "name": "NV-A"
+              "name": "VLD",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z"
             },
             "role": {
               "priority": 1,
               "name": "Burgemeester",
-              "_id": "5d8b13b233a3754d07d9316d"
+              "_id": "5d5aadd539d02e4c4bc3fb5c",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z"
             },
-            "email": "user@example.com"
+            "email": "user@example.com",
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "refId": "JD01",
+            "__v": 0
           }
         },
         "properties": {
@@ -3303,6 +3344,18 @@
           },
           "email": {
             "$ref": "#/components/schemas/DelegateEmail"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "refId": {
+            "$ref": "#/components/schemas/DelegateReference"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
           }
         },
         "required": [
@@ -3310,24 +3363,37 @@
           "firstname",
           "lastname",
           "division",
-          "role"
-        ]
+          "role",
+          "createdAt",
+          "updatedAt",
+          "refId"
+        ],
+        "description": ""
       },
       "DelegateFirstName": {
-        "title": "DelegateFirstName",
         "type": "string",
+        "title": "DelegateFirstName",
         "x-examples": {
-          "example-1": "string"
-        }
+          "example": "John"
+        },
+        "example": "John"
       },
       "DelegateLastName": {
+        "type": "string",
         "title": "DelegateLastName",
-        "type": "string"
+        "example": "Doe",
+        "x-examples": {
+          "example": "Doe"
+        }
       },
       "DelegateEmail": {
         "type": "string",
         "title": "DelegateEmail",
-        "format": "email"
+        "format": "email",
+        "example": "user@example.com",
+        "x-examples": {
+          "example": "user@example.com"
+        }
       },
       "DivisionResponse": {
         "title": "DivisionResponse",
@@ -3340,9 +3406,14 @@
               "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
               "size": 2751,
               "mimeType": "image/png",
-              "encoding": "7bit"
+              "encoding": "7bit",
+              "createdAt": "2020-08-25T08:40:40.601Z",
+              "updatedAt": "2020-08-25T08:44:42.900Z"
             },
-            "name": "VLD"
+            "name": "VLD",
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "__v": 0
           }
         },
         "properties": {
@@ -3354,11 +3425,23 @@
           },
           "name": {
             "$ref": "#/components/schemas/DivisionName"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
           }
         },
         "required": [
           "_id",
-          "name"
+          "name",
+          "createdAt",
+          "updatedAt",
+          "__v"
         ]
       },
       "PhotoResponse": {
@@ -3366,11 +3449,13 @@
         "type": "object",
         "x-examples": {
           "example": {
-            "_id": "5d5aad6c39d02e4c4bc3fb48",
+            "_id": "5f44bbe68365ec18ae854003",
             "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
-            "size": 2715,
+            "size": 2751,
             "mimeType": "image/png",
-            "encoding": "7bit"
+            "encoding": "7bit",
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z"
           }
         },
         "properties": {
@@ -3393,6 +3478,12 @@
           "encoding": {
             "type": "string",
             "example": "7bit"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
           }
         },
         "required": [
@@ -3400,7 +3491,9 @@
           "url",
           "size",
           "mimeType",
-          "encoding"
+          "encoding",
+          "createdAt",
+          "updatedAt"
         ]
       },
       "DivisionName": {
@@ -3468,6 +3561,21 @@
       "MicrophoneResponse": {
         "title": "MicrophoneResponse",
         "type": "object",
+        "x-examples": {
+          "example": {
+            "_id": "5f44bbe78365ec18ae854004",
+            "name": "Microphone 1",
+            "uuid": "mic1",
+            "id": 1,
+            "status": true,
+            "description": "string",
+            "room": 1,
+            "manufacturer": "televic",
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "__v": 0
+          }
+        },
         "properties": {
           "_id": {
             "$ref": "#/components/schemas/Microphone_ID"
@@ -3492,6 +3600,15 @@
           },
           "manufacturer": {
             "$ref": "#/components/schemas/MicrophoneManufacturer"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
           }
         },
         "required": [
@@ -3501,24 +3618,25 @@
           "id",
           "status",
           "room",
-          "manufacturer"
-        ],
-        "x-examples": {
-          "example": {
-            "_id": "5f44bbe78365ec18ae854004",
-            "name": "Microphone 1",
-            "uuid": "mic1",
-            "id": 1,
-            "status": true,
-            "description": null,
-            "room": 1,
-            "manufacturer": "televic"
-          }
-        }
+          "manufacturer",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ]
       },
       "DelegateCreateRequest": {
         "title": "DelegateCreateRequest",
         "type": "object",
+        "x-examples": {
+          "example": {
+            "firstname": "John",
+            "lastname": "Doe",
+            "email": "user@example.com",
+            "role": "5d5aadd539d02e4c4bc3fb5c",
+            "division": "5d5aad5e39d02e4c4bc3fb40",
+            "refId": "JD01"
+          }
+        },
         "properties": {
           "firstname": {
             "$ref": "#/components/schemas/DelegateFirstName"
@@ -3530,13 +3648,21 @@
             "$ref": "#/components/schemas/DelegateEmail"
           },
           "role": {
-            "$ref": ""
+            "$ref": "#/components/schemas/Role_ID"
+          },
+          "division": {
+            "$ref": "#/components/schemas/Division_ID"
+          },
+          "refId": {
+            "$ref": "#/components/schemas/DelegateReference"
           }
         },
         "required": [
           "firstname",
           "lastname",
-          "email"
+          "role",
+          "division",
+          "refId"
         ]
       },
       "Delegate_ID": {
@@ -3601,6 +3727,26 @@
       "TopicResponse": {
         "title": "TopicResponse",
         "type": "object",
+        "x-examples": {
+          "example": {
+            "_id": "5f44ce018365ec18ae854022",
+            "name": "Topic 1",
+            "description": "Topic Content 1",
+            "status": true,
+            "start": {
+              "realTime": "2020-08-25T08:42:26.271Z"
+            },
+            "stop": {
+              "realTime": "2020-08-25T08:44:42.887Z",
+              "relativeTime": 136
+            },
+            "priority": 1,
+            "session": 100,
+            "createdAt": "2020-08-25T08:40:40.601Z",
+            "updatedAt": "2020-08-25T08:44:42.900Z",
+            "__v": 0
+          }
+        },
         "properties": {
           "_id": {
             "$ref": "#/components/schemas/Topic_ID"
@@ -3610,14 +3756,121 @@
           },
           "description": {
             "$ref": "#/components/schemas/TopicDescription"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TopicStatus"
+          },
+          "start": {
+            "$ref": "#/components/schemas/TopicStart"
+          },
+          "stop": {
+            "$ref": "#/components/schemas/TopicStop"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "session": {
+            "$ref": "#/components/schemas/Session"
+          },
+          "createdAt": {
+            "$ref": "#/components/schemas/createdAt"
+          },
+          "updatedAt": {
+            "$ref": "#/components/schemas/updatedAt"
+          },
+          "__v": {
+            "$ref": "#/components/schemas/DocumentVersion"
+          }
+        },
+        "required": [
+          "_id",
+          "name",
+          "status",
+          "priority",
+          "session",
+          "createdAt",
+          "updatedAt",
+          "__v"
+        ]
+      },
+      "TopicStatus": {
+        "title": "TopicStatus",
+        "type": "boolean",
+        "x-examples": {
+          "example": true
+        }
+      },
+      "TopicStart": {
+        "title": "TopicStart",
+        "type": "object",
+        "properties": {
+          "realTime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2020-08-25T08:42:26.271Z"
           }
         },
         "x-examples": {
           "example": {
-            "_id": "5f44ce018365ec18ae854022",
-            "name": "Topic 1",
-            "description": "Topic Content 1"
+            "realTime": "2020-08-25T08:42:26.271Z"
           }
+        }
+      },
+      "TopicStop": {
+        "title": "TopicStop",
+        "type": "object",
+        "properties": {
+          "realTime": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2020-08-25T08:44:42.887Z"
+          },
+          "relativeTime": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 136
+          }
+        },
+        "x-examples": {
+          "example": {
+            "realTime": "2020-08-25T08:44:42.887Z",
+            "relativeTime": 136
+          }
+        }
+      },
+      "createdAt": {
+        "type": "string",
+        "title": "createdAt",
+        "format": "date-time",
+        "example": "2020-08-25T08:40:40.601Z",
+        "x-examples": {
+          "example": "2020-08-25T08:40:40.601Z"
+        }
+      },
+      "updatedAt": {
+        "type": "string",
+        "title": "updatedAt",
+        "format": "date-time",
+        "example": "2020-08-25T08:44:42.900Z",
+        "x-examples": {
+          "example": "2020-08-25T08:44:42.900Z"
+        }
+      },
+      "DelegateReference": {
+        "type": "string",
+        "title": "DelegateReference",
+        "example": "JD01",
+        "x-examples": {
+          "example": "JD01"
+        }
+      },
+      "DocumentVersion": {
+        "type": "integer",
+        "title": "DocumentVersion",
+        "example": 0,
+        "default": 0,
+        "x-examples": {
+          "example": 0
         }
       }
     }
@@ -3625,6 +3878,14 @@
   "security": [
     {
       "JWT Bearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Divisions"
+    },
+    {
+      "name": "Delegates"
     }
   ]
 }
