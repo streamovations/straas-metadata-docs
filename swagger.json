@@ -2937,7 +2937,49 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful Request"
+            "description": "Successful Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "room": {
+                      "$ref": "#/components/schemas/Room"
+                    },
+                    "session": {
+                      "$ref": "#/components/schemas/Session"
+                    },
+                    "uuid": {
+                      "$ref": "#/components/schemas/MicrophoneID"
+                    },
+                    "timestamp": {
+                      "$ref": "#/components/schemas/SpeechStart"
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/SpeechStatus"
+                    }
+                  },
+                  "required": [
+                    "room",
+                    "session",
+                    "uuid",
+                    "timestamp",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "room": 1,
+                      "session": 100,
+                      "uuid": 1,
+                      "timestamp": 1598261308917,
+                      "status": true
+                    }
+                  }
+                }
+              }
+            }
           },
           "400": {
             "description": "Validation Error"
@@ -2950,7 +2992,52 @@
           }
         },
         "operationId": "updateSpeechStatus",
-        "description": "Update Microphone Status - Creates Speech Entry based on status, enable microphone results in a new speech entry with timestamp as start"
+        "description": "Update Microphone Status - Creates Speech Entry based on status, enable microphone results in a new speech entry with timestamp as start",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "room": {
+                    "$ref": "#/components/schemas/Room"
+                  },
+                  "session": {
+                    "$ref": "#/components/schemas/Session"
+                  },
+                  "start": {
+                    "$ref": "#/components/schemas/SpeechStart"
+                  },
+                  "status": {
+                    "$ref": "#/components/schemas/SpeechStatus"
+                  },
+                  "microphone": {
+                    "$ref": "#/components/schemas/MicrophoneID"
+                  }
+                },
+                "required": [
+                  "room",
+                  "session",
+                  "start",
+                  "status",
+                  "microphone"
+                ]
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "room": 1,
+                    "session": 100,
+                    "start": 1598261308917,
+                    "status": true,
+                    "microphone": 1
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
       },
       "parameters": [
         {
@@ -5094,6 +5181,9 @@
       "SpeechResponse": {
         "title": "SpeechResponse",
         "type": "object",
+        "x-tags": [
+          "Speeches"
+        ],
         "properties": {
           "_id": {
             "$ref": "#/components/schemas/Speech_ID"
@@ -5121,6 +5211,9 @@
           },
           "microphone": {
             "$ref": "#/components/schemas/MicrophoneResponse"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SpeechStatus"
           }
         },
         "required": [
@@ -5129,10 +5222,11 @@
           "stop",
           "createdAt",
           "updatedAt",
-          "__v"
-        ],
-        "x-tags": [
-          "Speeches"
+          "__v",
+          "session",
+          "room",
+          "microphone",
+          "status"
         ]
       },
       "Speech_ID": {
