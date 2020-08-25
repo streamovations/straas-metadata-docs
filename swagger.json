@@ -420,7 +420,53 @@
           "Divisions"
         ],
         "summary": "Get divisions",
-        "parameters": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "last"
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 100,
+              "example": 100
+            },
+            "in": "query",
+            "name": "limit"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "desc",
+              "example": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            },
+            "in": "query",
+            "name": "sortOrder"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "example": "createdAt",
+              "default": "createdAt",
+              "enum": [
+                "createdAt",
+                "updatedAt",
+                "name"
+              ]
+            },
+            "in": "query",
+            "name": "sortField"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200",
@@ -1565,7 +1611,10 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string"
+            "type": "string",
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "limit",
@@ -1575,7 +1624,14 @@
             "default": 100,
             "minimum": 1,
             "maximum": 100,
-            "x-example": 100
+            "x-example": 100,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 100,
+              "minimum": 1,
+              "maximum": 100
+            }
           },
           {
             "name": "sortOrder",
@@ -1586,7 +1642,16 @@
               "asc",
               "desc"
             ],
-            "x-example": "asc"
+            "x-example": "asc",
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "example": "asc",
+              "default": "desc",
+              "type": "string"
+            }
           },
           {
             "name": "sortField",
@@ -1598,13 +1663,28 @@
               "updatedAt",
               "_id"
             ],
-            "x-example": "createdAt"
+            "x-example": "createdAt",
+            "schema": {
+              "enum": [
+                "createdAt",
+                "updatedAt"
+              ],
+              "example": "createdAt",
+              "default": "createdAt",
+              "type": "string"
+            }
           },
           {
             "name": "microphone",
             "in": "query",
             "required": false,
-            "type": "integer"
+            "type": "integer",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "example": 1
+            }
           }
         ],
         "responses": {
