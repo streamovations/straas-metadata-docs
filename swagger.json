@@ -434,7 +434,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -827,7 +841,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
                 "examples": {
                   "example": {
@@ -1016,7 +1030,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
                 "examples": {
                   "example": {
@@ -1468,7 +1482,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
                 "examples": {
                   "example": {
