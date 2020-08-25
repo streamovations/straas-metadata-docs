@@ -2900,7 +2900,7 @@
     },
     "/{customer}/metadata/delegates/upload/{id}": {
       "post": {
-        "description": "",
+        "description": "Upload a Delegate Photo",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -2926,10 +2926,30 @@
               }
             }
           }
+        },
+        "summary": "Upload a Delegate Photo",
+        "operationId": "uploadPhotoDelegate"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "customer",
+          "in": "path",
+          "required": true
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
         }
-      }
+      ]
     },
-    "/{customer}/metadata/divisions/upload/{id}": {
+    "//metadata/divisions/upload/{customer}/{id}": {
       "parameters": [
         {
           "schema": {
@@ -2949,13 +2969,13 @@
         }
       ],
       "get": {
-        "summary": "Your GET endpoint",
+        "summary": "",
         "tags": [],
-        "responses": {},
-        "operationId": ""
+        "operationId": "",
+        "description": ""
       },
       "post": {
-        "summary": "",
+        "summary": "Upload a Division Photo",
         "operationId": "uploadPhotoDivision",
         "responses": {
           "200": {
@@ -2982,7 +3002,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Upload a Division Photo"
       }
     }
   },
@@ -3315,13 +3336,13 @@
           "example": {
             "_id": "5d5aad5e39d02e4c4bc3fb40",
             "photo": {
-              "_id": "5d5aad6c39d02e4c4bc3fb48",
+              "_id": "5f44bbe68365ec18ae854003",
               "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
               "size": 2751,
               "mimeType": "image/png",
               "encoding": "7bit"
             },
-            "name": "NV-A"
+            "name": "VLD"
           }
         },
         "properties": {
@@ -3344,9 +3365,9 @@
         "title": "PhotoResponse",
         "type": "object",
         "x-examples": {
-          "example-1": {
+          "example": {
             "_id": "5d5aad6c39d02e4c4bc3fb48",
-            "url": "http://example.com",
+            "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
             "size": 2715,
             "mimeType": "image/png",
             "encoding": "7bit"
@@ -3383,11 +3404,12 @@
         ]
       },
       "DivisionName": {
-        "title": "DivisionName",
         "type": "string",
+        "title": "DivisionName",
         "x-examples": {
-          "example-1": "string"
-        }
+          "example": "VLD"
+        },
+        "example": "VLD"
       },
       "RoleName": {
         "title": "RoleName",
@@ -3404,25 +3426,39 @@
           "bosch",
           "shure",
           "sennheiser"
-        ]
+        ],
+        "example": "televic",
+        "x-examples": {
+          "example": "televic"
+        }
       },
       "MicrophoneName": {
+        "type": "string",
         "title": "MicrophoneName",
-        "type": "string"
+        "example": "Microphone 1",
+        "x-examples": {
+          "example": "Microphone 1"
+        }
       },
       "MicrophoneUUID": {
+        "type": "string",
         "title": "MicrophoneUUID",
-        "type": "string"
+        "example": "mic1"
       },
       "MicrophoneID": {
         "type": "integer",
         "title": "MicrophoneID",
-        "minimum": 1
+        "minimum": 1,
+        "x-examples": {
+          "example": 1
+        }
       },
       "MicrophoneStatus": {
         "title": "MicrophoneStatus",
         "type": "boolean",
-        "x-examples": {}
+        "x-examples": {
+          "example": true
+        }
       },
       "Description": {
         "title": "Description",
@@ -3455,6 +3491,27 @@
           },
           "manufacturer": {
             "$ref": "#/components/schemas/MicrophoneManufacturer"
+          }
+        },
+        "required": [
+          "_id",
+          "name",
+          "uuid",
+          "id",
+          "status",
+          "room",
+          "manufacturer"
+        ],
+        "x-examples": {
+          "example": {
+            "_id": "5f44bbe78365ec18ae854004",
+            "name": "Microphone 1",
+            "uuid": "mic1",
+            "id": 1,
+            "status": true,
+            "description": null,
+            "room": 1,
+            "manufacturer": "televic"
           }
         }
       },
@@ -3495,7 +3552,10 @@
       "Division_ID": {
         "type": "string",
         "title": "Division_ID",
-        "example": "5d5aad5e39d02e4c4bc3fb40"
+        "example": "5d5aad5e39d02e4c4bc3fb40",
+        "x-examples": {
+          "example": "5d5aad5e39d02e4c4bc3fb40"
+        }
       },
       "Microphone_ID": {
         "type": "string",
@@ -3505,7 +3565,10 @@
       "Photo_ID": {
         "type": "string",
         "title": "Photo_ID",
-        "example": "5f44bbe68365ec18ae854003"
+        "example": "5f44bbe68365ec18ae854003",
+        "x-examples": {
+          "example": "5f44bbe68365ec18ae854003"
+        }
       }
     }
   },
