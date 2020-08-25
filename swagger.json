@@ -2816,30 +2816,13 @@
         "section": "Topics"
       }
     },
-    "/{customer}/metadata/delegates/upload/{id}": {
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "customer",
-          "in": "path",
-          "required": true
-        },
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "id",
-          "in": "path",
-          "required": true
-        }
-      ],
+    "": {
+      "parameters": [],
       "get": {
         "summary": "Your GET endpoint",
         "tags": [],
         "responses": {},
-        "operationId": "get-customer-metadata-delegates-upload"
+        "operationId": ""
       },
       "post": {
         "summary": "",
@@ -2892,19 +2875,6 @@
         },
         "requestBody": {
           "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "upload": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "upload"
-                ]
-              }
-            },
             "multipart/form-data": {
               "schema": {
                 "type": "object",
@@ -2923,8 +2893,14 @@
                 }
               }
             }
-          }
+          },
+          "description": "Multipart form data post with binary data"
         }
+      }
+    },
+    "/{customer}/metadata/delegates/upload/{id}": {
+      "post": {
+        "description": ""
       }
     }
   },
