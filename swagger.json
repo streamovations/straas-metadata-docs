@@ -3144,32 +3144,6 @@
       "DelegateResponse": {
         "title": "DelegatesResponse",
         "type": "object",
-        "properties": {
-          "_id": {
-            "$ref": "#/components/schemas/_id"
-          },
-          "firstname": {
-            "$ref": "#/components/schemas/DelegateFirstName"
-          },
-          "lastname": {
-            "$ref": "#/components/schemas/DelegateLastName"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Description"
-          },
-          "photo": {
-            "$ref": "#/components/schemas/PhotoResponse"
-          },
-          "division": {
-            "$ref": "#/components/schemas/DivisionResponse"
-          },
-          "role": {
-            "$ref": "#/components/schemas/RoleResponse"
-          },
-          "email": {
-            "$ref": "#/components/schemas/DelegateEmail"
-          }
-        },
         "x-examples": {
           "example-2": {
             "_id": "5d5aad5e39d02e4c4bc3fb40",
@@ -3200,6 +3174,32 @@
               "_id": "5d8b13b233a3754d07d9316d"
             },
             "email": "user@example.com"
+          }
+        },
+        "properties": {
+          "_id": {
+            "$ref": "#/components/schemas/_id"
+          },
+          "firstname": {
+            "$ref": "#/components/schemas/DelegateFirstName"
+          },
+          "lastname": {
+            "$ref": "#/components/schemas/DelegateLastName"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
+          },
+          "photo": {
+            "$ref": "#/components/schemas/PhotoResponse"
+          },
+          "division": {
+            "$ref": "#/components/schemas/DivisionResponse"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleResponse"
+          },
+          "email": {
+            "$ref": "#/components/schemas/DelegateEmail"
           }
         }
       },
@@ -3377,10 +3377,14 @@
           },
           "email": {
             "$ref": "#/components/schemas/DelegateEmail"
+          },
+          "role": {
+            "$ref": ""
           }
         },
         "required": [
           "firstname",
+          "lastname",
           "email"
         ]
       }
