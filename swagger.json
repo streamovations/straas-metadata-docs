@@ -6583,7 +6583,7 @@
   ],
   "servers": [
     {
-      "url": "https://core-api.streamovations.be",
+      "url": "https://demo.core.metadata.smv.cloud/",
       "description": "demo"
     }
   ],
