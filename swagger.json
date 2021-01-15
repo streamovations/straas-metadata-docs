@@ -6589,10 +6589,10 @@
   ],
   "components": {
     "securitySchemes": {
-      "JWT Token": {
-        "name": "API Key",
-        "type": "http",
+      "bearerAuth": {           # arbitrary name for the security scheme
+        "type": "http"
         "scheme": "bearer"
+        "bearerFormat": "JWT" 
       }
     },
     "schemas": {
@@ -7808,7 +7808,7 @@
   },
   "security": [
     {
-      "JWT Bearer": []
+      "bearerAuth": [] 
     }
   ],
   "tags": [
