@@ -7128,11 +7128,11 @@
           },
           "refId": {
             "$ref": "#/components/schemas/DelegateReference"
+          },
+          "photo": {
+            "$ref": "#/components/schemas/Photo_ID"
           }
-        },
-        "required": [
-          "firstname"
-        ]
+        }
       },
       "Delegate_ID": {
         "type": "string",
