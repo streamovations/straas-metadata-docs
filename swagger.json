@@ -24,17 +24,6 @@
         "summary": "Get delegates",
         "parameters": [
           {
-            "name": "active",
-            "in": "query",
-            "required": false,
-            "type": "boolean",
-            "description": "Filter for active or inactive delegates",
-            "x-example": true,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
             "name": "last",
             "in": "query",
             "required": false,
@@ -7105,6 +7094,46 @@
           "Delegates"
         ]
       },
+      "DelegateUpdateRequest": {
+        "title": "DelegateUpdateRequest",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "firstname": "John",
+            "lastname": "Doe",
+            "email": "user@example.com",
+            "role": "5d5aadd539d02e4c4bc3fb5c",
+            "division": "5d5aad5e39d02e4c4bc3fb40",
+            "refId": "JD01"
+          }
+        },
+        "x-tags": [
+          "Delegates"
+        ],
+        "properties": {
+          "firstname": {
+            "$ref": "#/components/schemas/DelegateFirstName"
+          },
+          "lastname": {
+            "$ref": "#/components/schemas/DelegateLastName"
+          },
+          "email": {
+            "$ref": "#/components/schemas/DelegateEmail"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role_ID"
+          },
+          "division": {
+            "$ref": "#/components/schemas/Division_ID"
+          },
+          "refId": {
+            "$ref": "#/components/schemas/DelegateReference"
+          }
+        },
+        "required": [
+          "firstname"
+        ]
+      },
       "Delegate_ID": {
         "type": "string",
         "title": "Delegate_ID",
@@ -7335,6 +7364,17 @@
       "DelegateReference": {
         "type": "string",
         "title": "DelegateReference",
+        "example": "JD01",
+        "x-examples": {
+          "example": "JD01"
+        },
+        "x-tags": [
+          "Delegates"
+        ]
+      },
+      "refId": {
+        "type": "string",
+        "title": "refId",
         "example": "JD01",
         "x-examples": {
           "example": "JD01"
@@ -7708,32 +7748,28 @@
       "DivisionCreateRequest": {
         "title": "DivisionCreateRequest",
         "type": "object",
+        "x-tags": [
+          "Divisions"
+        ],
         "properties": {
           "name": {
             "$ref": "#/components/schemas/DivisionName"
           },
-          "description": {
-            "$ref": "#/components/schemas/Description"
+          "refId": {
+            "$ref": "#/components/schemas/refId"
+          },
+          "": {
+            "type": "string"
           }
         },
         "required": [
-          "name"
-        ],
-        "x-tags": [
-          "Divisions"
+          "name",
+          "refId"
         ]
       },
       "DivisionUpdateRequest": {
         "title": "DivisionUpdateRequest",
         "type": "object",
-        "properties": {
-          "name": {
-            "$ref": "#/components/schemas/DivisionName"
-          },
-          "description": {
-            "$ref": "#/components/schemas/Description"
-          }
-        },
         "x-examples": {
           "example": {
             "name": "VLD",
@@ -7742,7 +7778,15 @@
         },
         "x-tags": [
           "Divisions"
-        ]
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/DivisionName"
+          },
+          "refId": {
+            "$ref": "#/components/schemas/refId"
+          }
+        }
       },
       "ValidateParamsErrorResponse": {
         "title": "ValidateParamsErrorResponse",
