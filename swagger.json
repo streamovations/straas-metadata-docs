@@ -7821,7 +7821,15 @@
         "required": [
           "name",
           "refId"
-        ]
+        ],
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "VLD",
+              "refId": "JD01"
+            }
+          }
+        }
       },
       "DivisionUpdateRequest": {
         "title": "DivisionUpdateRequest",
