@@ -613,7 +613,36 @@
           }
         },
         "operationId": "updateDelegate",
-        "description": "Update a Delegate by ID"
+        "description": "Update a Delegate by ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstname": {
+                    "$ref": "#/components/schemas/DelegateFirstName"
+                  },
+                  "lastname": {
+                    "$ref": "#/components/schemas/DelegateLastName"
+                  },
+                  "email": {
+                    "$ref": "#/components/schemas/DelegateEmail"
+                  },
+                  "refId": {
+                    "$ref": "#/components/schemas/refId"
+                  },
+                  "role": {
+                    "$ref": "#/components/schemas/Role_ID"
+                  },
+                  "division": {
+                    "$ref": "#/components/schemas/Division_ID"
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -973,6 +1002,12 @@
                     "description": "string"
                   }
                 }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
               }
             }
           }
@@ -1640,7 +1675,16 @@
           }
         },
         "operationId": "createRole",
-        "description": "Create a Role"
+        "description": "Create a Role",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DivisionCreateRequest"
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -2360,7 +2404,16 @@
           }
         },
         "operationId": "createMicrophone",
-        "description": "Create a Microphone"
+        "description": "Create a Microphone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
       },
       "parameters": [
         {
@@ -7063,6 +7116,9 @@
             "refId": "JD01"
           }
         },
+        "x-tags": [
+          "Delegates"
+        ],
         "properties": {
           "firstname": {
             "$ref": "#/components/schemas/DelegateFirstName"
@@ -7081,6 +7137,9 @@
           },
           "refId": {
             "$ref": "#/components/schemas/DelegateReference"
+          },
+          "description": {
+            "$ref": "#/components/schemas/Description"
           }
         },
         "required": [
@@ -7089,9 +7148,6 @@
           "role",
           "division",
           "refId"
-        ],
-        "x-tags": [
-          "Delegates"
         ]
       },
       "DelegateUpdateRequest": {
@@ -7758,8 +7814,8 @@
           "refId": {
             "$ref": "#/components/schemas/refId"
           },
-          "": {
-            "type": "string"
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
           }
         },
         "required": [
@@ -7785,6 +7841,9 @@
           },
           "refId": {
             "$ref": "#/components/schemas/refId"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
           }
         }
       },
