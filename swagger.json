@@ -27,7 +27,6 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "description": "Paginate filter starting from given delegate id in combination with limit",
             "schema": {
               "type": "string",
@@ -38,11 +37,7 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
             "description": "Paginate filter for given limit started from last given delegate id",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -56,12 +51,7 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
             "description": "Sort ascending or descending based on given sortField",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc",
             "schema": {
               "default": "desc",
@@ -77,12 +67,7 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
             "description": "Sort ascending or descending based on given sortField",
-            "enum": [
-              "createdAt",
-              "updatedAt"
-            ],
             "x-example": "createdAt",
             "schema": {
               "type": "string",
@@ -98,7 +83,6 @@
             "name": "firstname",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "Michel",
             "schema": {
               "type": "string",
@@ -109,7 +93,6 @@
             "name": "lastname",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "Drets",
             "schema": {
               "type": "string",
@@ -188,7 +171,6 @@
           "Delegates"
         ],
         "summary": "Create a delegate",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -345,12 +327,9 @@
       },
       "parameters": [
         {
-          "type": "string",
           "name": "customer",
           "in": "path",
           "required": true,
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -428,11 +407,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -524,7 +500,6 @@
           "Delegates"
         ],
         "summary": "Update a delegate",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -724,11 +699,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -738,7 +710,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "ObjectId for delegate",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
@@ -885,7 +856,6 @@
           "Divisions"
         ],
         "summary": "Create a division",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -1018,10 +988,7 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "example": "veurne",
             "type": "string"
@@ -1120,7 +1087,6 @@
           "Divisions"
         ],
         "summary": "Update a division",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -1302,10 +1268,7 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -1315,7 +1278,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
             "type": "string",
@@ -1410,10 +1372,7 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -1435,7 +1394,6 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "schema": {
               "type": "string",
               "example": "5f44f1e48365ec18ae85405d"
@@ -1445,10 +1403,6 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -1462,11 +1416,6 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc",
             "schema": {
               "type": "string",
@@ -1482,13 +1431,6 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "function",
-              "name"
-            ],
             "x-example": "createdAt",
             "schema": {
               "type": "string",
@@ -1590,7 +1532,6 @@
           "Roles"
         ],
         "summary": "Create a role",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -1691,11 +1632,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -1798,11 +1736,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "example": "veurne",
             "type": "string"
@@ -1894,7 +1829,6 @@
           "Roles"
         ],
         "summary": "Update a role",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -2065,11 +1999,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -2079,7 +2010,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
             "type": "string",
@@ -2102,18 +2032,12 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ],
             "x-example": "true"
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -2127,7 +2051,6 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "5ce92d6a7fc5fa37c33eb885",
             "schema": {
               "type": "string",
@@ -2138,11 +2061,6 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "desc",
             "schema": {
               "type": "string",
@@ -2158,16 +2076,6 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "status",
-              "createdAt",
-              "updatedAt",
-              "mac",
-              "id",
-              "uuid",
-              "room"
-            ],
             "x-example": "status",
             "schema": {
               "type": "string",
@@ -2182,14 +2090,12 @@
           {
             "name": "status",
             "in": "query",
-            "required": false,
-            "type": "boolean"
+            "required": false
           },
           {
             "name": "id",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "2",
             "schema": {
               "type": "integer"
@@ -2199,7 +2105,6 @@
             "name": "refid",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "2-1",
             "schema": {
               "type": "string"
@@ -2283,7 +2188,6 @@
           "Microphones"
         ],
         "summary": "Create microphone",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -2420,11 +2324,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -2516,7 +2417,6 @@
           "Microphones"
         ],
         "summary": "Update microphone",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -2697,11 +2597,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -2711,7 +2608,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "objectID",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
@@ -2735,41 +2631,30 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "false",
-              "true"
-            ],
             "x-example": "true"
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "5ce92d6a7fc5fa37c33eb885"
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100
           },
           {
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "desc"
           },
           {
             "name": "id",
             "in": "query",
             "required": false,
-            "type": "string",
             "description": "microphone id",
             "x-example": "2"
           },
@@ -2777,29 +2662,17 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "status",
-              "createdAt",
-              "updatedAt",
-              "id",
-              "uuid",
-              "room",
-              "mac"
-            ],
             "x-example": "status"
           },
           {
             "name": "status",
             "in": "query",
-            "required": false,
-            "type": "boolean"
+            "required": false
           },
           {
             "name": "refid",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "2-1"
           }
         ],
@@ -2880,11 +2753,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "example": "veurne",
             "type": "string"
@@ -2894,10 +2764,8 @@
           "name": "room",
           "in": "path",
           "required": true,
-          "type": "integer",
           "description": "Room unique id",
           "x-example": 2,
-          "minimum": 1,
           "schema": {
             "type": "integer",
             "example": 1
@@ -2919,7 +2787,6 @@
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "schema": {
               "type": "string",
               "example": "5f44f1e48365ec18ae85405d"
@@ -2929,10 +2796,6 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -2946,11 +2809,6 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc",
             "schema": {
               "enum": [
@@ -2966,12 +2824,6 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "_id"
-            ],
             "x-example": "createdAt",
             "schema": {
               "enum": [
@@ -2987,7 +2839,6 @@
             "name": "microphone",
             "in": "query",
             "required": false,
-            "type": "integer",
             "schema": {
               "type": "integer",
               "minimum": 1,
@@ -3151,7 +3002,6 @@
           "Attendees"
         ],
         "summary": "Create attendees",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -3358,11 +3208,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "example": "veurne",
             "type": "string"
@@ -3454,7 +3301,6 @@
           "Attendees"
         ],
         "summary": "Update an attendee",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -3719,11 +3565,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -3733,7 +3576,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "objectId",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
@@ -3757,59 +3599,40 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           },
           {
             "name": "last",
             "in": "query",
-            "required": false,
-            "type": "string"
+            "required": false
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100
           },
           {
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc"
           },
           {
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "_id"
-            ],
             "x-example": "createdAt"
           },
           {
             "name": "microphone",
             "in": "query",
-            "required": false,
-            "type": "integer"
+            "required": false
           },
           {
             "name": "status",
             "in": "query",
-            "required": false,
-            "type": "boolean"
+            "required": false
           }
         ],
         "responses": {
@@ -3967,11 +3790,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -3981,10 +3801,8 @@
           "name": "session",
           "in": "path",
           "required": true,
-          "type": "integer",
           "description": "Session unique id",
           "x-example": 100,
-          "minimum": 1,
           "schema": {
             "type": "integer",
             "example": 100
@@ -4006,14 +3824,12 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "5cf909247805517211b124e7",
             "schema": {
               "type": "string",
@@ -4024,10 +3840,6 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -4041,11 +3853,6 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc",
             "schema": {
               "type": "string"
@@ -4055,14 +3862,6 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "start.realTime",
-              "stop.realTime",
-              "microphone.id"
-            ],
             "x-example": "createdAt",
             "schema": {
               "type": "string",
@@ -4078,7 +3877,6 @@
             "name": "microphone",
             "in": "query",
             "required": false,
-            "type": "integer",
             "x-example": 5,
             "schema": {
               "type": "integer",
@@ -4090,7 +3888,6 @@
             "name": "status",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           }
         ],
@@ -4200,11 +3997,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -4425,11 +4219,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -4439,7 +4230,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "objectId",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
@@ -4458,7 +4248,6 @@
           "Speeches"
         ],
         "summary": "Update speech status",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -4739,11 +4528,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -4753,10 +4539,8 @@
           "name": "session",
           "in": "path",
           "required": true,
-          "type": "integer",
           "description": "Session unique id",
           "x-example": 100,
-          "minimum": 1,
           "schema": {
             "type": "integer",
             "example": 100
@@ -4778,14 +4562,12 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "5cf909247805517211b124e7",
             "schema": {
               "type": "string",
@@ -4796,10 +4578,6 @@
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100,
             "schema": {
               "type": "integer",
@@ -4813,11 +4591,6 @@
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc",
             "schema": {
               "type": "string",
@@ -4833,14 +4606,6 @@
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "start.realTime",
-              "stop.realTime",
-              "microphone.id"
-            ],
             "x-example": "createdAt",
             "schema": {
               "type": "string",
@@ -4856,7 +4621,6 @@
             "name": "microphone",
             "in": "query",
             "required": false,
-            "type": "integer",
             "x-example": 5,
             "schema": {
               "type": "integer",
@@ -4868,7 +4632,6 @@
             "name": "status",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           }
         ],
@@ -4978,11 +4741,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -4992,10 +4752,8 @@
           "name": "session",
           "in": "path",
           "required": true,
-          "type": "integer",
           "description": "Session unique id",
           "x-example": 100,
-          "minimum": 1,
           "schema": {
             "type": "integer",
             "example": 100
@@ -5012,7 +4770,6 @@
           "Topics"
         ],
         "summary": "Create a topic",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -5177,11 +4934,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -5295,7 +5049,6 @@
           "Topics"
         ],
         "summary": "Update a topic",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -5566,11 +5319,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string"
           }
@@ -5579,7 +5329,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "objectId",
           "x-example": "5ce92d6a7fc5fa37c33eb885",
           "schema": {
@@ -5603,62 +5352,41 @@
             "name": "active",
             "in": "query",
             "required": false,
-            "type": "boolean",
             "x-example": true
           },
           {
             "name": "last",
             "in": "query",
             "required": false,
-            "type": "string",
             "x-example": "5cfaa2571695e82e0d5c590b"
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
-            "type": "integer",
-            "default": 100,
-            "minimum": 1,
-            "maximum": 100,
             "x-example": 100
           },
           {
             "name": "sortOrder",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "asc",
-              "desc"
-            ],
             "x-example": "asc"
           },
           {
             "name": "sortField",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "createdAt",
-              "updatedAt",
-              "name",
-              "stop.realTime",
-              "start.realTime"
-            ],
             "x-example": "createdAt"
           },
           {
             "name": "name",
             "in": "query",
-            "required": false,
-            "type": "string"
+            "required": false
           },
           {
             "name": "session",
             "in": "query",
             "required": false,
-            "type": "integer",
             "x-example": 100
           }
         ],
@@ -5739,11 +5467,8 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
           "description": "Customer unique name",
           "x-example": "veurne",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -5753,10 +5478,8 @@
           "name": "session",
           "in": "path",
           "required": true,
-          "type": "integer",
           "description": "Session unique id",
           "x-example": 100,
-          "minimum": 1,
           "schema": {
             "type": "integer",
             "example": 100
@@ -5773,7 +5496,6 @@
           "Topics"
         ],
         "summary": "Stop a Topic",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -5906,9 +5628,6 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -5918,7 +5637,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "schema": {
             "type": "string",
             "example": "5f44e7c2ad10e2185ffd759f"
@@ -5935,7 +5653,6 @@
           "Topics"
         ],
         "summary": "Start a topic",
-        "consumes": [],
         "parameters": [
           {
             "name": "body",
@@ -6068,9 +5785,6 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -6080,7 +5794,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "schema": {
             "type": "string",
             "example": "5f44e7c2ad10e2185ffd759f"
@@ -6215,9 +5928,6 @@
           "name": "customer",
           "in": "path",
           "required": true,
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 255,
           "schema": {
             "type": "string",
             "example": "veurne"
@@ -6227,7 +5937,6 @@
           "name": "id",
           "in": "path",
           "required": true,
-          "type": "string",
           "schema": {
             "type": "string",
             "example": "5f44e7c2ad10e2185ffd759f"
@@ -6627,7 +6336,7 @@
   ],
   "servers": [
     {
-      "url": "https://demo.core.metadata.smv.cloud/",
+      "url": "https://demo.core.metadata.smv.cloud",
       "description": "demo"
     }
   ],
