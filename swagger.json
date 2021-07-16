@@ -340,10 +340,12 @@
               "examples": {
                 "example": {
                   "value": {
-                    "firstname": "string",
-                    "lastname": "string",
-                    "email": "user@example.com",
-                    "role": null
+                    "firstname": "d7lxre",
+                    "lastname": "i7wb95",
+                    "email": "support@streamovations.be",
+                    "refId": "JV01",
+                    "division": "507f1f77bcf86cd799439011",
+                    "role": "507f1f77bcf86cd79947896"
                   }
                 }
               }
@@ -6592,7 +6594,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "bearerFormat": "JWT" 
+        "bearerFormat": "JWT"
       }
     },
     "schemas": {
@@ -7808,7 +7810,7 @@
   },
   "security": [
     {
-      "bearerAuth": [] 
+      "bearerAuth": []
     }
   ],
   "tags": [
