@@ -1,7 +1,8 @@
 <html>
     <head>    
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.17.0/swagger-ui.css">
-        <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/index.min.js"></script>
+        
         <script>
             function render() {
                 var ui = SwaggerUIBundle({
@@ -10,7 +11,8 @@
                     presets: [
                         SwaggerUIBundle.presets.apis,
                         SwaggerUIBundle.SwaggerUIStandalonePreset
-                    ]
+                    ],
+                    layout: "StandaloneLayout"
                 });
             }
 
