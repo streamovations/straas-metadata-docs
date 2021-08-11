@@ -1,18 +1,16 @@
 <html>
-    <head>    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.0/swagger-ui.min.css" integrity="sha512-OzAczs3EC865hvaGNsO241q+Mec0OEJ/DqGB33M1nt284+cAa8EPq/k1hUkQQxM+y0cN085INGU1WcZ12hoqfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.0/swagger-ui-bundle.js" integrity="sha512-hllqpXIziyrVUUgoFxrlUMvQH7DTj0FCwsxBxdn7xtNhEM4z/s4T6VxvqbdiqwKGXUblrUI7UItQGH7qwJy26w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+    <head>   
+      <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.min.css">
+      <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js" charset="UTF-8"></script>
         <script>
             function render() {
-                var ui = SwaggerUI({
+                var ui = SwaggerUIBundle({
                     url:  `swagger.json`,
                     dom_id: '#swagger-ui',
                     presets: [
-                        SwaggerUI.presets.apis,
-                        SwaggerUI.SwaggerUIStandalonePreset
-                    ],
-                    layout: "StandaloneLayout"
+                        SwaggerUIBundle.presets.apis,
+                        SwaggerUIBundle.SwaggerUIStandalonePreset
+                    ]
                 });
             }
 
