@@ -545,9 +545,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -558,9 +556,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -581,9 +577,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           }
@@ -644,9 +638,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -657,9 +649,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -876,7 +866,24 @@
                   "$ref": "#/components/schemas/DivisionResponse"
                 },
                 "examples": {
-
+                  "example-1": {
+                    "value": {
+                      "_id": "5d5aad5e39d02e4c4bc3fb40",
+                      "photo": {
+                        "_id": "5f44bbe68365ec18ae854003",
+                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                        "size": 2751,
+                        "mimeType": "image/png",
+                        "encoding": "7bit",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z"
+                      },
+                      "name": "VLD",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -931,6 +938,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1010,9 +1025,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -1023,9 +1036,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -1183,9 +1194,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -1274,9 +1283,7 @@
                     "$ref": "#/components/schemas/DivisionResponse"
                   }
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             },
             "headers": {
@@ -1408,9 +1415,7 @@
                     "$ref": "#/components/schemas/RoleResponse"
                   }
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -1813,9 +1818,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -1884,9 +1887,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
- 
-                }
+                "examples": {}
               }
             }
           },
@@ -2196,9 +2197,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2209,9 +2208,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2409,9 +2406,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2422,9 +2417,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2469,9 +2462,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2482,9 +2473,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2859,9 +2848,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -2872,9 +2859,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3038,9 +3023,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3051,9 +3034,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3313,9 +3294,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3402,9 +3381,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3415,9 +3392,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3787,9 +3762,7 @@
                     "$ref": "#/components/schemas/SpeechResponse"
                   }
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3883,10 +3856,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/SpeechResponse"
                 },
-                "examples": {
-
-                
-                }
+                "examples": {}
               }
             }
           },
@@ -3962,9 +3932,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/SpeechResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3975,9 +3943,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -3988,9 +3954,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -4231,9 +4195,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -4307,9 +4269,7 @@
                   "microphone"
                 ]
               },
-              "examples": {
-
-              }
+              "examples": {}
             }
           },
           "description": ""
@@ -4629,9 +4589,7 @@
                     "$ref": "#/components/schemas/TopicResponse"
                   }
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -4642,9 +4600,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -4655,9 +4611,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -4907,9 +4861,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5024,9 +4976,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5037,9 +4987,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5304,9 +5252,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5317,9 +5263,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5453,9 +5397,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5466,9 +5408,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5588,9 +5528,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5715,9 +5653,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5828,9 +5764,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
@@ -5841,9 +5775,7 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {
-
-                }
+                "examples": {}
               }
             }
           },
