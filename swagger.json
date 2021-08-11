@@ -880,9 +880,6 @@
               "properties": {
                 "name": {
                   "type": "string"
-                },
-                "": {
-                  "$ref": "#/definitions/delegates"
                 }
               },
               "required": [
