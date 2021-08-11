@@ -115,7 +115,21 @@
             }
           },
           "400": {
-            "description": "Status 400"
+            "description": "Status 400",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Status 401",
@@ -140,7 +154,8 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
-                }
+                },
+                "examples": {}
               }
             }
           },
@@ -291,6 +306,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -372,6 +392,13 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateParamsErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
                 }
               }
             }
@@ -399,6 +426,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -409,6 +441,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -772,6 +812,28 @@
                   "items": {
                     "$ref": "#/components/schemas/DivisionResponse"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5d5aad5e39d02e4c4bc3fb40",
+                        "photo": {
+                          "_id": "5f44bbe68365ec18ae854003",
+                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                          "size": 2751,
+                          "mimeType": "image/png",
+                          "encoding": "7bit",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z"
+                        },
+                        "name": "VLD",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -816,6 +878,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -826,6 +893,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -928,6 +1003,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1014,6 +1094,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5d5aad5e39d02e4c4bc3fb40",
+                      "photo": {
+                        "_id": "5f44bbe68365ec18ae854003",
+                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                        "size": 2751,
+                        "mimeType": "image/png",
+                        "encoding": "7bit",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z"
+                      },
+                      "name": "VLD",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1025,7 +1125,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -1036,7 +1142,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -1046,6 +1158,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1056,6 +1173,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1091,6 +1216,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5d5aad5e39d02e4c4bc3fb40",
+                      "photo": {
+                        "_id": "5f44bbe68365ec18ae854003",
+                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                        "size": 2751,
+                        "mimeType": "image/png",
+                        "encoding": "7bit",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z"
+                      },
+                      "name": "VLD",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1135,6 +1280,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1145,6 +1295,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1183,6 +1341,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DivisionResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5d5aad5e39d02e4c4bc3fb40",
+                      "photo": {
+                        "_id": "5f44bbe68365ec18ae854003",
+                        "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                        "size": 2751,
+                        "mimeType": "image/png",
+                        "encoding": "7bit",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z"
+                      },
+                      "name": "VLD",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1194,7 +1372,14 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
               }
             }
           },
@@ -1221,6 +1406,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1231,6 +1421,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1319,6 +1517,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1415,7 +1618,20 @@
                     "$ref": "#/components/schemas/RoleResponse"
                   }
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aadd539d02e4c4bc3fb5c",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
               }
             }
           },
@@ -1459,6 +1675,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1469,6 +1690,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1513,6 +1742,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "priority": 1,
+                      "name": "Burgemeester",
+                      "_id": "5d5aadd539d02e4c4bc3fb5c",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1540,6 +1781,13 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
                 }
               }
             }
@@ -1550,6 +1798,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1560,6 +1813,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1571,7 +1832,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DivisionCreateRequest"
+                "$ref": "#/components/schemas/RoleCreateRequest"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "Burgemeester",
+                    "priority": 1
+                  }
+                }
               }
             }
           }
@@ -1611,6 +1880,20 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/RoleResponse"
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aadd539d02e4c4bc3fb5c",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
                   }
                 }
               }
@@ -1664,6 +1947,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1674,6 +1962,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1712,6 +2008,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "priority": 1,
+                      "name": "Burgemeester",
+                      "_id": "5d5aadd539d02e4c4bc3fb5c",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1756,6 +2064,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1766,6 +2079,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -1807,6 +2128,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "priority": 1,
+                      "name": "Burgemeester",
+                      "_id": "5d5aadd539d02e4c4bc3fb5c",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -1818,7 +2151,14 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
               }
             }
           },
@@ -1845,6 +2185,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -1855,13 +2200,38 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
           }
         },
         "operationId": "updateRole",
-        "description": "Update a Role by ID"
+        "description": "Update a Role by ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleUpdateRequest"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "Burgemeester",
+                    "priority": 1
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -1876,6 +2246,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RoleResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "priority": 1,
+                      "name": "Burgemeester",
+                      "_id": "5d5aadd539d02e4c4bc3fb5c",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -2059,6 +2441,25 @@
                   "items": {
                     "$ref": "#/components/schemas/MicrophoneResponse"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -2103,6 +2504,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -2113,6 +2519,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -2186,6 +2600,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MicrophoneResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5f44bbe78365ec18ae854004",
+                      "name": "Microphone 1",
+                      "uuid": "mic1",
+                      "id": 1,
+                      "status": true,
+                      "description": "string",
+                      "room": 1,
+                      "manufacturer": "televic",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -2195,9 +2626,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2208,7 +2645,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2218,6 +2661,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -2228,6 +2676,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -2239,7 +2695,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object"
+                "$ref": "#/components/schemas/MicrophoneCreateRequest"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "Microphone 1",
+                    "priority": 1,
+                    "manufacturer": "televic",
+                    "uuid": "mic1",
+                    "id": 1,
+                    "status": true,
+                    "room": 1
+                  }
+                }
               }
             }
           }
@@ -2404,9 +2873,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2417,7 +2892,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2427,16 +2908,59 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "updateMicrophone",
-        "description": "Update a Microhphone by ID"
+        "description": "Update a Microhphone by ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicrophoneUpdateRequest"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "Microphone 1",
+                    "priority": 1,
+                    "manufacturer": "televic",
+                    "uuid": "mic1",
+                    "id": 1,
+                    "status": true,
+                    "room": 1,
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "tags": [
@@ -2451,6 +2975,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MicrophoneResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5f44bbe78365ec18ae854004",
+                      "name": "Microphone 1",
+                      "uuid": "mic1",
+                      "id": 1,
+                      "status": true,
+                      "description": "string",
+                      "room": 1,
+                      "manufacturer": "televic",
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -2460,7 +3001,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
                 "examples": {}
               }
@@ -2473,7 +3014,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2483,12 +3030,32 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
           },
           "500": {
-            "description": "Status 500"
+            "description": "Status 500",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "operationId": "deleteMicrophone",
@@ -2588,6 +3155,25 @@
                   "items": {
                     "$ref": "#/components/schemas/MicrophoneResponse"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -2632,6 +3218,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -2642,6 +3233,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -2846,9 +3445,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2859,7 +3464,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2869,6 +3480,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -2879,6 +3495,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3021,9 +3645,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3034,7 +3664,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3044,6 +3680,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3054,6 +3695,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3112,6 +3761,82 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AttendeeResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5f4385e18365ec18ae853f6d",
+                      "delegate": {
+                        "_id": "5d5aad5e39d02e4c4bc3fb40",
+                        "firstname": "John",
+                        "lastname": "Doe",
+                        "description": "string",
+                        "photo": {
+                          "_id": "5f44bbe68365ec18ae854003",
+                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                          "size": 2751,
+                          "mimeType": "image/png",
+                          "encoding": "7bit",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z"
+                        },
+                        "division": {
+                          "_id": "5d5aad5e39d02e4c4bc3fb40",
+                          "photo": {
+                            "_id": "5f44bbe68365ec18ae854003",
+                            "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                            "size": 2751,
+                            "mimeType": "image/png",
+                            "encoding": "7bit",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z"
+                          },
+                          "name": "VLD",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "role": {
+                          "priority": 1,
+                          "name": "Burgemeester",
+                          "_id": "5d5aadd539d02e4c4bc3fb5c",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "email": "user@example.com",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "refId": "JD01",
+                        "__v": 0
+                      },
+                      "microphone": {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "role": {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aadd539d02e4c4bc3fb5c",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -3292,9 +4017,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3321,6 +4052,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3331,6 +4067,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3370,6 +4114,82 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AttendeeResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5f4385e18365ec18ae853f6d",
+                      "delegate": {
+                        "_id": "5d5aad5e39d02e4c4bc3fb40",
+                        "firstname": "John",
+                        "lastname": "Doe",
+                        "description": "string",
+                        "photo": {
+                          "_id": "5f44bbe68365ec18ae854003",
+                          "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                          "size": 2751,
+                          "mimeType": "image/png",
+                          "encoding": "7bit",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z"
+                        },
+                        "division": {
+                          "_id": "5d5aad5e39d02e4c4bc3fb40",
+                          "photo": {
+                            "_id": "5f44bbe68365ec18ae854003",
+                            "url": "https://metadata-cdn.streamovations.be/4980f8babb6cbf39002f1d259b7a43c2",
+                            "size": 2751,
+                            "mimeType": "image/png",
+                            "encoding": "7bit",
+                            "createdAt": "2020-08-25T08:40:40.601Z",
+                            "updatedAt": "2020-08-25T08:44:42.900Z"
+                          },
+                          "name": "VLD",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "role": {
+                          "priority": 1,
+                          "name": "Burgemeester",
+                          "_id": "5d5aadd539d02e4c4bc3fb5c",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "email": "user@example.com",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "refId": "JD01",
+                        "__v": 0
+                      },
+                      "microphone": {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "role": {
+                        "priority": 1,
+                        "name": "Burgemeester",
+                        "_id": "5d5aadd539d02e4c4bc3fb5c",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "session": 100,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0
+                    }
+                  }
                 }
               }
             }
@@ -3379,9 +4199,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3392,7 +4218,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3402,6 +4234,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3412,6 +4249,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3627,6 +4472,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3637,6 +4487,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3762,7 +4620,36 @@
                     "$ref": "#/components/schemas/SpeechResponse"
                   }
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5f4387caad10e2185ffd74a6",
+                        "start": 1598261308917,
+                        "stop": 1598261309922,
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0,
+                        "session": 100,
+                        "room": 1,
+                        "microphone": {
+                          "_id": "5f44bbe78365ec18ae854004",
+                          "name": "Microphone 1",
+                          "uuid": "mic1",
+                          "id": 1,
+                          "status": true,
+                          "description": "string",
+                          "room": 1,
+                          "manufacturer": "televic",
+                          "createdAt": "2020-08-25T08:40:40.601Z",
+                          "updatedAt": "2020-08-25T08:44:42.900Z",
+                          "__v": 0
+                        },
+                        "status": true
+                      }
+                    ]
+                  }
+                }
               }
             }
           },
@@ -3806,6 +4693,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3816,6 +4708,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -3856,7 +4756,34 @@
                 "schema": {
                   "$ref": "#/components/schemas/SpeechResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "_id": "5f4387caad10e2185ffd74a6",
+                      "start": 1598261308917,
+                      "stop": 1598261309922,
+                      "createdAt": "2020-08-25T08:40:40.601Z",
+                      "updatedAt": "2020-08-25T08:44:42.900Z",
+                      "__v": 0,
+                      "session": 100,
+                      "room": 1,
+                      "microphone": {
+                        "_id": "5f44bbe78365ec18ae854004",
+                        "name": "Microphone 1",
+                        "uuid": "mic1",
+                        "id": 1,
+                        "status": true,
+                        "description": "string",
+                        "room": 1,
+                        "manufacturer": "televic",
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      },
+                      "status": true
+                    }
+                  }
+                }
               }
             }
           },
@@ -3900,6 +4827,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -3910,6 +4842,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4090,7 +5030,7 @@
                   ]
                 },
                 "examples": {
-                  "example": {
+                  "example-1": {
                     "value": {
                       "room": 1,
                       "session": 100,
@@ -4193,9 +5133,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4222,6 +5168,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -4232,6 +5183,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4269,7 +5228,17 @@
                   "microphone"
                 ]
               },
-              "examples": {}
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "room": 1,
+                    "session": 100,
+                    "timestamp": 1598261308917,
+                    "status": true,
+                    "microphone": 1
+                  }
+                }
+              }
             }
           },
           "description": ""
@@ -4399,7 +5368,7 @@
                   }
                 },
                 "examples": {
-                  "example": {
+                  "example-1": {
                     "value": [
                       {
                         "_id": "5f4387caad10e2185ffd74a6",
@@ -4422,7 +5391,8 @@
                           "createdAt": "2020-08-25T08:40:40.601Z",
                           "updatedAt": "2020-08-25T08:44:42.900Z",
                           "__v": 0
-                        }
+                        },
+                        "status": true
                       }
                     ]
                   }
@@ -4470,6 +5440,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -4480,6 +5455,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4589,7 +5572,30 @@
                     "$ref": "#/components/schemas/TopicResponse"
                   }
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5f44ce018365ec18ae854022",
+                        "name": "Topic 1",
+                        "description": "Topic Content 1",
+                        "status": true,
+                        "start": {
+                          "realTime": "2020-08-25T08:42:26.271Z"
+                        },
+                        "stop": {
+                          "realTime": "2020-08-25T08:44:42.887Z",
+                          "relativeTime": 136
+                        },
+                        "priority": 1,
+                        "session": 100,
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
+                }
               }
             }
           },
@@ -4598,9 +5604,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4611,7 +5623,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4621,6 +5639,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -4631,6 +5654,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4643,6 +5674,16 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TopicCreateRequest"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "name": "Topic 1",
+                    "description": "Topic Content 1",
+                    "session": 100,
+                    "priority": 1
+                  }
+                }
               }
             }
           }
@@ -4745,6 +5786,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -4755,6 +5801,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4859,9 +5913,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4888,6 +5948,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -4898,6 +5963,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -4974,9 +6047,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4987,7 +6066,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -4997,6 +6082,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5007,6 +6097,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5101,6 +6199,30 @@
                   "items": {
                     "$ref": "#/components/schemas/TopicResponse"
                   }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": [
+                      {
+                        "_id": "5f44ce018365ec18ae854022",
+                        "name": "Topic 1",
+                        "description": "Topic Content 1",
+                        "status": true,
+                        "start": {
+                          "realTime": "2020-08-25T08:42:26.271Z"
+                        },
+                        "stop": {
+                          "realTime": "2020-08-25T08:44:42.887Z",
+                          "relativeTime": 136
+                        },
+                        "priority": 1,
+                        "session": 100,
+                        "createdAt": "2020-08-25T08:40:40.601Z",
+                        "updatedAt": "2020-08-25T08:44:42.900Z",
+                        "__v": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -5145,6 +6267,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5155,6 +6282,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5250,9 +6385,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5263,7 +6404,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5273,6 +6420,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5283,6 +6435,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5395,9 +6555,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5408,7 +6574,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5418,6 +6590,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5428,6 +6605,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5447,7 +6632,7 @@
                 }
               },
               "examples": {
-                "example": {
+                "example-1": {
                   "value": {
                     "session": 100
                   }
@@ -5526,9 +6711,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5555,6 +6746,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5565,6 +6761,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5631,6 +6835,13 @@
                     "type": "string"
                   }
                 }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "upload": "string"
+                  }
+                }
               }
             }
           }
@@ -5651,9 +6862,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5680,6 +6897,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5690,6 +6912,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -5762,9 +6992,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ValidateErrorResponse"
+                  "$ref": "#/components/schemas/ValidateParamsErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Request parameters did not validate"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5775,7 +7011,13 @@
                 "schema": {
                   "$ref": "#/components/schemas/ValidateAuthErrorResponse"
                 },
-                "examples": {}
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": "Token could not be verified"
+                    }
+                  }
+                }
               }
             }
           },
@@ -5785,6 +7027,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateEndpointErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -5795,6 +7042,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ValidateServerErrorResponse"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "error": true,
+                      "message": "InternalServerError"
+                    }
+                  }
                 }
               }
             }
@@ -7188,6 +8443,132 @@
           "name"
         ]
       },
+      "RoleCreateRequest": {
+        "title": "RoleCreateRequest",
+        "type": "object",
+        "x-tags": [
+          "Divisions"
+        ],
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "VLD"
+            }
+          }
+        },
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "MicrophoneCreateRequest": {
+        "title": "MicrophoneCreateRequest",
+        "type": "object",
+        "x-tags": [
+          "Divisions"
+        ],
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "Microphone 1",
+              "priority": 1,
+              "manufacturer": "televic",
+              "uuid": "mic1",
+              "id": 1,
+              "status": true,
+              "room": 1
+            }
+          }
+        },
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/MicrophoneName"
+          },
+          "manufacturer": {
+            "$ref": "#/components/schemas/MicrophoneManufacturer"
+          },
+          "uuid": {
+            "$ref": "#/components/schemas/MicrophoneUUID"
+          },
+          "id": {
+            "$ref": "#/components/schemas/MicrophoneID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MicrophoneStatus"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "room": {
+            "type": "number",
+            "example": 1
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "manufacturer",
+          "uuid",
+          "id",
+          "status"
+        ]
+      },
+      "MicrophoneUpdateRequest": {
+        "title": "MicrophoneUpdateRequest",
+        "type": "object",
+        "x-tags": [
+          "Divisions"
+        ],
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "Microphone 1",
+              "priority": 1,
+              "manufacturer": "televic",
+              "uuid": "mic1",
+              "id": 1,
+              "status": true,
+              "room": 1
+            }
+          }
+        },
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/MicrophoneName"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "manufacturer": {
+            "$ref": "#/components/schemas/MicrophoneManufacturer"
+          },
+          "uuid": {
+            "$ref": "#/components/schemas/MicrophoneUUID"
+          },
+          "id": {
+            "$ref": "#/components/schemas/MicrophoneID"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MicrophoneStatus"
+          },
+          "room": {
+            "type": "number",
+            "example": 1
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
       "DivisionUpdateRequest": {
         "title": "DivisionUpdateRequest",
         "type": "object",
@@ -7212,6 +8593,29 @@
           }
         }
       },
+      "RoleUpdateRequest": {
+        "title": "RoleUpdateRequest",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "Burgemeester",
+              "priority": 1
+            }
+          }
+        },
+        "x-tags": [
+          "Divisions"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/RoleName"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          }
+        }
+      },
       "ValidateParamsErrorResponse": {
         "title": "ValidateParamsErrorResponse",
         "type": "object",
@@ -7224,7 +8628,10 @@
         },
         "x-examples": {
           "example": {
-            "error": "Request parameters did not validate"
+            "error": "Request parameters did not validate",
+            "value": {
+              "error": "Request parameters did not validate"
+            }
           }
         },
         "description": "Query or Body parameter Validation Error"
@@ -7294,7 +8701,8 @@
           }
         }
       }
-    }
+    },
+    "responses": {}
   },
   "security": [
     {
