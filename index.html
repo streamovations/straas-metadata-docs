@@ -5,12 +5,12 @@
         
         <script>
             function render() {
-                var ui = SwaggerUIBundle({
+                var ui = SwaggerUI({
                     url:  `swagger.json`,
                     dom_id: '#swagger-ui',
                     presets: [
-                        SwaggerUIBundle.presets.apis,
-                        SwaggerUIBundle.SwaggerUIStandalonePreset
+                        SwaggerUI.presets.apis,
+                        SwaggerUI.SwaggerUIStandalonePreset
                     ],
                     layout: "StandaloneLayout"
                 });
