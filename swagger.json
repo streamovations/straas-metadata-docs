@@ -7530,29 +7530,24 @@
         "x-tags": [
           "Divisions"
         ],
+        "x-examples": {
+          "example-1": {
+            "value": {
+              "name": "VLD"
+            }
+          }
+        },
         "properties": {
           "name": {
             "$ref": "#/components/schemas/DivisionName"
-          },
-          "refId": {
-            "$ref": "#/components/schemas/refId"
           },
           "priority": {
             "$ref": "#/components/schemas/Priority"
           }
         },
         "required": [
-          "name",
-          "refId"
-        ],
-        "x-examples": {
-          "example-1": {
-            "value": {
-              "name": "VLD",
-              "refId": "JD01"
-            }
-          }
-        }
+          "name"
+        ]
       },
       "DivisionUpdateRequest": {
         "title": "DivisionUpdateRequest",
